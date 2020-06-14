@@ -48,3 +48,6 @@ Initially we as a team had multiple sessions to understand the requirement clear
 	stored in memory or into database.
 
 Overall, idea in the above design was to have high cohesion and loose coupling between front end and back end classes. Also, tried to follow Interface Segregation Principle and Single Responsibility Principle as part of design, to keep design more scalable and easier to plugin future requirement changes.
+
+**Summary:**
+I feel the greatest lesson we learned was each other’s strength and weaknesses and how to be a team in general. For the design itself, we had valuable conversations, and we were all forward looking in our suggestions. We are at a good place to move forward with this project and have a clear path forward. The most obvious lessons learned was when we all got together and talked through the UML for the class diagram, many of us came into the class knowing how to do class diagrams. Our discussion allowed us to see what parts of class diagrams we knew that may be specific to our company or previous class and we were able to generalize our knowledge. Lastly, I think we now have a better idea of how much work we should expect each week and once this assignment is graded and when we have grader feedback a better understanding of our effort and capabilities.
