@@ -1,4 +1,4 @@
-# Design Description Document
+# Design Information Document
 
 
 The intense information flow from a constantly evolving and demanding job market could overwhelm many job-seekers.  This app is designed as a tool to help job-seekers compare offers.  After all, no one knows the “perfect job” better than the user. Using this app, a user could record job offers, compare a job offer against another, or against the user’s current job.  Moreover, this app supports weighted comparison. That is,  the user could assign higher “weights” to certain aspects (e.g. yearly salary or leaving time), and find the job offer that fits his/her interest most. 
