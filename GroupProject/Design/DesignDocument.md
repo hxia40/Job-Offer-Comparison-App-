@@ -72,3 +72,6 @@
 
 ## 4 User Interface Design
 *For GUI-based systems, this section should provide the specific format/layout of the user interface of the system (e.g., in the form of graphical mockups).*
+
+<img src="../Images/UserInterfaceDesign.png" alt="User Interface Design"/>
+
