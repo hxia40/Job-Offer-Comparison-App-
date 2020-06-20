@@ -60,6 +60,8 @@
 
 *This section should describe how the different components will be deployed on actual hardware devices. Similar to the previous subsection, this diagram may be unnecessary for simple systems; in these cases, simply state so and concisely state why.*
 
+<img src="../Images/JobOfferDeploymentDiagram.png" alt="Deployment Diagram"/>
+
 ## 3 Low-Level Design
 
 *Describe the low-level design for each of the system components identified in the previous section. For each component, you should provide details in the following UML diagrams to show its internal structure.*
