@@ -54,6 +54,8 @@
 
 *This section should provide and describe a diagram that shows the various components and how they are connected. This diagram shows the logical/functional components of the system, where each component represents a cluster of related functionality. In the case of simple systems, where there is a single component, this diagram may be unnecessary; in these cases, simply state so and concisely state why.*
 
+<img src="../Images/JobCompare_ComponentDiagram.png" alt="Component Diagram"/>
+
 ### 2.2 Deployment Diagram
 
 *This section should describe how the different components will be deployed on actual hardware devices. Similar to the previous subsection, this diagram may be unnecessary for simple systems; in these cases, simply state so and concisely state why.*
