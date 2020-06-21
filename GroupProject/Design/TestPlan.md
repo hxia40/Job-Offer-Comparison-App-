@@ -70,7 +70,10 @@ This is the testing we will do to ensure our new features do not break old featu
 
 ### 1.3 Adequacy Criterion
 
-*Define how you are going to assess the quality of your test cases. Typically, this involves some form of functional or structural coverage. If you plan to use different techniques at different testing levels (e.g., unit and system), you should clarify that.*
+We will consider our test suite as adequent if they fulfill these criterias:
+* Statement coverage: For each  executable statement in the app, there is a test case that executes that statement.
+* Transition coverage: For each interface transition in the app, there is a test case that traverses that transition.
+* Path coverage: For all finite-length subpaths starting from the app's Main Menu, there is at least one test case that includes such subpath.
 
 ### 1.4 Bug Tracking
 
