@@ -91,3 +91,43 @@ We will also have a database make file with backup so that we can do version tes
 ## 2 Test Cases
 
 *This section should be the core of this document. You should provide a table of test cases, one per row. For each test case, the table should provide its purpose, the steps necessary to perform the test, the expected result, the actual result (to be filled later), pass/fail information (to be filled later), and any additional information you think is relevant.*
+
+* Test Case 1
+    * purpose: test if the "Enter Current Job Details" interface could refuse to save incomplete input.
+    * the steps necessary to perform the test: 1. Navigate to the "Enter Current Job Details" interface. 2. Enter partial information. I.e. Only enter title, company, and Yearly Salary. 3. Press the "save" button
+    * the expected result: The app will raise an error, which prevents the user to save partial information. 
+    * the actual result (to be filled later)
+    * pass/fail information (to be filled later)
+    * additional information
+
+* Test Case 2
+    * purpose: test if the "Enter Current Job Details" interface could handle the user's input properly under extreme conditions.
+    * the steps necessary to perform the test: 1. Navigate to the "Enter Current Job Details" interface. 2. Enter complete information for all the blanks. 3. Kill the app.
+    * the expected result: The app will NOT save any inputs. All current job details will remain unchanged. 
+    * the actual result (to be filled later)
+    * pass/fail information (to be filled later)
+    * additional information
+
+* Test Case 3
+    * purpose: test if the "Enter Current Job Details" interface could handle the user's input properly under extreme conditions.
+    * the steps necessary to perform the test: 1. Navigate to the "Enter Current Job Details" interface. 2. Enter complete information for all the blanks. 3. Press the "save" button. 4. Kill the app.
+    * the expected result: The app will save the inputs. 
+    * the actual result (to be filled later)
+    * pass/fail information (to be filled later)
+    * additional information 
+
+* Test Case 4
+    * purpose: test if the "Compare Job Offers: List" interface could handle incomplete input in an robust manner.
+    * the steps necessary to perform the test: 1. Manually add an job offer to the database (i.e. not via the app), fill 100,000 into "Yearly Salary", and leave all other information blank. 2. Navigate to the "Compare Job offers" interface. 
+    * the expected result: The app should list the incomplete job offer based on available information. However, in the list, the "Title" and the "Company" of this job will be shown as blank. The app will still calculate the rank of this job offer based on its incomplete information, and rank it in the list properly.
+    * the actual result (to be filled later)
+    * pass/fail information (to be filled later)
+    * additional information  
+     
+* Test Case 5
+    * purpose: test if the "Compare Job Offers: Compare" interface could handle incomplete input in an robust manner.
+    * the steps necessary to perform the test: 1. Manually add an job offer to the database (i.e. not via the app), fill 100,000 into "Yearly Salary", and leave all other information blank. 2. Navigate to the "Compare Job offers: List" interface. 3. Choose the said incomplete job offer, and compare it with an complete job offer in the "Compare Job offers: Compare" interface.
+    * the expected result: The app will still perform the comparsion using the incomplete information, but leaving the unfilled slots blank.
+    * the actual result (to be filled later)
+    * pass/fail information (to be filled later)
+    * additional information  
