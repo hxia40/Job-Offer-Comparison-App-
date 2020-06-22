@@ -92,6 +92,13 @@ We will also have a database make file with backup so that we can do version tes
 
 *This section should be the core of this document. You should provide a table of test cases, one per row. For each test case, the table should provide its purpose, the steps necessary to perform the test, the expected result, the actual result (to be filled later), pass/fail information (to be filled later), and any additional information you think is relevant.*
 
+
+ Test Case # | Purpose | Steps | Epected Result | Actual Result | actual result | Pass/fail Information | Additional Information
+------------ | -------------
+1 | 1. Navigate to the "Enter Current Job Details" interface. 2. Enter partial information. I.e. Only enter title, company, and Yearly Salary. 3. Press the "save" button | The app will raise an error, which prevents the user to save partial information.| | | |
+
+
+
 * Test Case 1
     * purpose: test if the "Enter Current Job Details" interface could refuse to save incomplete input.
     * the steps necessary to perform the test: 
