@@ -75,13 +75,13 @@
 
  Role | Team Member
 ------------ | -------------
-Team Lead | Pankaj
+Team Lead | Pankaj Chouhan
 Editor | Hui Xia
 Lead Developer | Sreekumar Hariharan
-Developer | Hui Xia, Richard Wood, Pankaj
+Developer | Hui Xia, Richard Wood, Pankaj Chouhan
 DBA | Richard Wood
-Tester | Pankaj
+Tester | Pankaj Chouhan
 UI developer | Hui Xia
 System Architect | Sreekumar Hariharan
 Standards/Requirements Keeper | Richard Wood
-User Advocate | Pankaj
+User Advocate | Pankaj Chouhan
