@@ -98,11 +98,10 @@ We will also have a database make file with backup so that we can do version tes
 
 Test Case # | Purpose | Steps | Epected Result | Actual Result | actual result | Pass/fail Information | Additional Information
 ------------ | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- 
-1 | 1. Navigate to the "Enter Current Job Details" interface. 2. Enter partial information. I.e. Only enter title, company, and Yearly Salary. 3. Press the "save" button | The app will raise an error, which prevents the user to save partial information.| | | |
+ 1 | Test if the "Enter Current Job Details" interface could refuse to save incomplete input.| 1. Navigate to the "Enter Current Job Details" interface. 2. Enter partial information. I.e. Only enter title, company, and Yearly Salary. 3. Press the "save" button | The app will raise an error, which prevents the user to save partial information.| | | | |
+ 2 | Test if the "Enter Current Job Details" interface could handle the user's input properly under extreme conditions.| 1. Navigate to the "Enter Current Job Details" interface. 2. Enter complete information for all the blanks. 3. Kill the app.| The app will NOT save any inputs. All current job details will remain unchanged.| | | | |
  
-Test Case # | Purpose | Steps | Epected Result | Actual Result | actual result | Pass/fail Information | Additional Information
------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- 
- 1 | 1. Navigate to the "Enter Current Job Details" interface. 2. Enter partial information. I.e. Only enter title, company, and Yearly Salary. 3. Press the "save" button | The app will raise an error, which prevents the user to save partial information.| | | |
+
 
 
 
