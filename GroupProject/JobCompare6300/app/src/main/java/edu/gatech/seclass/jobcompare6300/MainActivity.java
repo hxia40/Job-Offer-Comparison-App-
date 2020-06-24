@@ -18,4 +18,9 @@ public class MainActivity extends AppCompatActivity {
         Intent i = new Intent(getApplicationContext(),ComparisonSettings.class);
         startActivity(i);
     }
+
+    public void JobOffers(View view){
+        Intent i = new Intent(getApplicationContext(),JobOffers.class);
+        startActivity(i);
+    }
 }
