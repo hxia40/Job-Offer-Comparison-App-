@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">JobCompare6300</string>
+    <string name="job_title">Job Title</string>
+    <string name="company">Company</string>
+    <string name="city">City</string>
+    <string name="state">State</string>
+    <string name="cost_of_living_index">Cost Of Living Index</string>
+    <string name="yearly_salary">Yearly Salary</string>
+    <string name="signing_bonus">Signing Bonus</string>
+    <string name="yearly_bonus">Yearly Bonus</string>
+    <string name="leave_time">Leave Time</string>
 </resources>
