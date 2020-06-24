@@ -50,7 +50,7 @@
                     android:ellipsize="middle"
                     android:text="@string/job_title"
                     android:textAlignment="viewStart"
-                    android:textSize="16sp" />
+                    android:textSize="14sp" />
 
                 <EditText
                     android:id="@+id/txt_job_title"
@@ -304,12 +304,12 @@
             android:layout_height="72dp"
             android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/button"
+            <ImageButton
+                android:id="@+id/imageButton2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/btn_add" />
+                app:srcCompat="@android:drawable/ic_input_add" />
 
             <Button
                 android:id="@+id/button2"
@@ -325,12 +325,13 @@
                 android:layout_weight="1"
                 android:text="@string/btn_compare" />
 
-            <Button
-                android:id="@+id/button4"
+            <ImageButton
+                android:id="@+id/imageButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/btn_cancel" />
+                app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
+
         </LinearLayout>
 
     </LinearLayout>
