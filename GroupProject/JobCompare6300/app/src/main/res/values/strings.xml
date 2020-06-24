@@ -9,4 +9,9 @@
     <string name="signing_bonus">Signing Bonus</string>
     <string name="yearly_bonus">Yearly Bonus</string>
     <string name="leave_time">Leave Time</string>
+    <string name="retirement_bonus">Retirement Bonus</string>
+    <string name="btn_compare">Compare</string>
+    <string name="btn_add">Add</string>
+    <string name="btn_save">Save</string>
+    <string name="btn_cancel">Cancel</string>
 </resources>
