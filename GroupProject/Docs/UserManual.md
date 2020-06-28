@@ -7,8 +7,8 @@ This App helps the user to compare job offers in terms of salary, benefits, loca
 ## How to use this app:
 
 *Enter current job details:*
-(1) Start the app or navigate to the app's Main Menu.
-(2) Hit the "CURRENT JOB" button.
+(1) Start the app or navigate to the app's Main Menu.\s\s
+(2) Hit the "CURRENT JOB" button.\s\s
 (3) Fill all the required text fields. If the user input(s) are invalid, corresponding error mark(s) will appear on the right-hand side of the text field.
 (4) Hit the "SAVE" button to save the inputs as the default current job detail, or hit the "CANCEL" button to clear all inputs without saving.
 (5) Hit the Andriod's default "back" button to navigate to the app's Main Menu.
