@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".JobOffers">
+    tools:context=".CurrentJobDetails">
 
     <LinearLayout
-        android:id="@+id/layout_job_offer_caption"
+        android:id="@+id/layout_current_job_details_caption"
         android:layout_width="match_parent"
         android:layout_height="37dp"
         android:orientation="vertical">
@@ -20,10 +20,10 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/lbl_job_offers_caption"
+            android:id="@+id/lbl_current_job_details_caption"
             android:layout_width="match_parent"
             android:layout_height="41dp"
-            android:text="Job Offers"
+            android:text="Current Job Details"
             android:textAlignment="center"
             android:textColor="@android:color/black"
             android:textSize="18sp" />
@@ -44,7 +44,7 @@
                     android:layout_weight="0.4" />
 
                 <TextView
-                    android:id="@+id/lbl_job_offers_title"
+                    android:id="@+id/lbl_current_job_details_title"
                     android:layout_width="46dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
@@ -55,7 +55,7 @@
                     android:textSize="14sp" />
 
                 <EditText
-                    android:id="@+id/txt_job_offers_title"
+                    android:id="@+id/txt_current_job_details_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
@@ -76,7 +76,7 @@
                     android:layout_weight="0.6" />
 
                 <TextView
-                    android:id="@+id/lbl_job_offers_company"
+                    android:id="@+id/lbl_current_job_details_company"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
@@ -84,7 +84,7 @@
                     android:textColor="@android:color/black" />
 
                 <EditText
-                    android:id="@+id/txt_job_offers_company"
+                    android:id="@+id/txt_current_job_details_company"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="2.5"
@@ -103,7 +103,7 @@
                     android:layout_weight="0.4" />
 
                 <TextView
-                    android:id="@+id/lbl_job_offers_city"
+                    android:id="@+id/lbl_current_job_details_city"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="3.5"
@@ -111,7 +111,7 @@
                     android:textColor="@android:color/black" />
 
                 <EditText
-                    android:id="@+id/txt_job_offers_city"
+                    android:id="@+id/txt_current_job_details_city"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
@@ -130,7 +130,7 @@
                     android:layout_weight="0.4" />
 
                 <TextView
-                    android:id="@+id/lbl_job_offers_state"
+                    android:id="@+id/lbl_current_job_details_state"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
@@ -138,7 +138,7 @@
                     android:textColor="@android:color/black" />
 
                 <EditText
-                    android:id="@+id/txt_job_offers_state"
+                    android:id="@+id/txt_current_job_details_state"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1.75"
@@ -157,7 +157,7 @@
                     android:layout_weight="1" />
 
                 <TextView
-                    android:id="@+id/lbl_job_offers_costofliving"
+                    android:id="@+id/lbl_current_job_details_costofliving"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -165,7 +165,7 @@
                     android:textColor="@android:color/black" />
 
                 <EditText
-                    android:id="@+id/txt_job_offers_costofliving"
+                    android:id="@+id/txt_current_job_details_costofliving"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="4.5"
@@ -184,7 +184,7 @@
                     android:layout_weight="0.7" />
 
                 <TextView
-                    android:id="@+id/lbl_job_offers_yearly_salary"
+                    android:id="@+id/lbl_current_job_details_yearly_salary"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="4"
@@ -192,7 +192,7 @@
                     android:textColor="@android:color/black" />
 
                 <EditText
-                    android:id="@+id/txt_job_offers_yearly_salary"
+                    android:id="@+id/txt_current_job_details_yearly_salary"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="4"
@@ -211,7 +211,7 @@
                     android:layout_weight="0.8" />
 
                 <TextView
-                    android:id="@+id/lbl_job_offers_signing_bonus"
+                    android:id="@+id/lbl_current_job_details_signing_bonus"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="4"
@@ -219,7 +219,7 @@
                     android:textColor="@android:color/black" />
 
                 <EditText
-                    android:id="@+id/txt_job_offers_signing_bonus"
+                    android:id="@+id/txt_current_job_details_signing_bonus"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="5"
@@ -238,7 +238,7 @@
                     android:layout_weight="0.7" />
 
                 <TextView
-                    android:id="@+id/lbl_job_offers_yearly_bonus"
+                    android:id="@+id/lbl_current_job_details_yearly_bonus"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="4"
@@ -246,7 +246,7 @@
                     android:textColor="@android:color/black" />
 
                 <EditText
-                    android:id="@+id/txt_job_offers_yearly_bonus"
+                    android:id="@+id/txt_current_job_details_yearly_bonus"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="4.5"
@@ -265,7 +265,7 @@
                     android:layout_weight="1" />
 
                 <TextView
-                    android:id="@+id/lbl_job_offers_retirement_bonus"
+                    android:id="@+id/lbl_current_job_details_retirement_bonus"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
@@ -273,7 +273,7 @@
                     android:textColor="@android:color/black" />
 
                 <EditText
-                    android:id="@+id/txt_job_offers_retirement_bonus"
+                    android:id="@+id/txt_current_job_details_retirement_bonus"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="5.75"
@@ -292,7 +292,7 @@
                     android:layout_weight="1" />
 
                 <TextView
-                    android:id="@+id/lbl_job_offers_leave_time"
+                    android:id="@+id/lbl_current_job_details_leave_time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="4"
@@ -300,7 +300,7 @@
                     android:textColor="@android:color/black" />
 
                 <EditText
-                    android:id="@+id/txt_job_offers_leave_time"
+                    android:id="@+id/txt_current_job_details_leave_time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="4"
@@ -320,22 +320,13 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
 
-            <Button
-                android:id="@+id/btn_job_offers_add"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#03A9F4"
-                android:text="@string/btn_add"
-                android:textColor="@android:color/white" />
-
             <Space
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
 
             <Button
-                android:id="@+id/btn_job_offers_save"
+                android:id="@+id/btn_current_job_details_save"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -348,28 +339,24 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
 
-            <Button
-                android:id="@+id/btn_job_offers_compare"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#03A9F4"
-                android:text="@string/btn_compare"
-                android:textColor="@android:color/white" />
-
             <Space
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
 
             <Button
-                android:id="@+id/btn_job_offers_cancel"
+                android:id="@+id/btn_current_job_details_cancel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="#03A9F4"
                 android:text="@string/btn_cancel"
                 android:textColor="@android:color/white" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
 
         </LinearLayout>
 

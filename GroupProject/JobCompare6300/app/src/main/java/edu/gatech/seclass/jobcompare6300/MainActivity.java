@@ -32,4 +32,11 @@ public class MainActivity extends AppCompatActivity {
         Intent i = new Intent(getApplicationContext(),CompareJobOffers.class);
         startActivity(i);
     }
+
+
+
+    public void CurrentJobDetails(View view){
+        Intent i = new Intent(getApplicationContext(),CurrentJobDetails.class);
+        startActivity(i);
+    }
 }
