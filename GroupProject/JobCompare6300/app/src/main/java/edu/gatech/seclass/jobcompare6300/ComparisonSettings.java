@@ -1,6 +1,7 @@
 package edu.gatech.seclass.jobcompare6300;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
 
 import android.content.SharedPreferences;
 import android.view.View;
@@ -9,6 +10,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import android.os.Bundle;
+
+import java.util.List;
+
+import edu.gatech.seclass.jobcompare6300.database.AppDatabase;
+import edu.gatech.seclass.jobcompare6300.database.DAI;
+import edu.gatech.seclass.jobcompare6300.database.JobOffer;
 
 public class ComparisonSettings extends AppCompatActivity {
     private EditText yearlySalaryWeight;
@@ -48,27 +55,28 @@ public class ComparisonSettings extends AppCompatActivity {
         // FOR TESTING ONLY
 
         // get data
-//        SharedPreferences prefs = getSharedPreferences(PREFS_NAME,0);
-//        if (prefs.contains("ysw")){
-//            int yswValue = prefs.getInt("ysw", 1);
-//            testText1.setText(String.valueOf(yswValue));
-//        }
-//        if (prefs.contains("sbw")){
-//            int sbwValue = prefs.getInt("sbw", 1);
-//            testText2.setText(String.valueOf(sbwValue));
-//        }
-//        if (prefs.contains("ybw")){
-//            int ybwValue = prefs.getInt("ybw", 1);
-//            testText3.setText(String.valueOf(ybwValue));
-//        }
-//        if (prefs.contains("rbw")){
-//            int rbwValue = prefs.getInt("rbw", 1);
-//            testText4.setText(String.valueOf(rbwValue));
-//        }
-//        if (prefs.contains("ltw")){
-//            int ltwValue = prefs.getInt("ltw", 1);
-//            testText5.setText(String.valueOf(ltwValue));
-//        }
+        SharedPreferences prefs = getSharedPreferences(PREFS_NAME,0);
+        if (prefs.contains("ysw")){
+            int yswValue = prefs.getInt("ysw", 1);
+            testText1.setText(String.valueOf(yswValue));
+        }
+        if (prefs.contains("sbw")){
+            int sbwValue = prefs.getInt("sbw", 1);
+            testText2.setText(String.valueOf(sbwValue));
+        }
+        if (prefs.contains("ybw")){
+            int ybwValue = prefs.getInt("ybw", 1);
+            testText3.setText(String.valueOf(ybwValue));
+        }
+        if (prefs.contains("rbw")){
+            int rbwValue = prefs.getInt("rbw", 1);
+            testText4.setText(String.valueOf(rbwValue));
+        }
+        if (prefs.contains("ltw")){
+            int ltwValue = prefs.getInt("ltw", 1);
+            testText5.setText(String.valueOf(ltwValue));
+        }
+
     }
     public void onClickSave(View v) {
         boolean noError = true;
@@ -127,5 +135,6 @@ public class ComparisonSettings extends AppCompatActivity {
             }
             // show preference data - FOR TESTING ONLY
         }
+
     }
 }
