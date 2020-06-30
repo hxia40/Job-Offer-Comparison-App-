@@ -39,4 +39,7 @@ public class MainActivity extends AppCompatActivity {
         Intent i = new Intent(getApplicationContext(),CurrentJobDetails.class);
         startActivity(i);
     }
-}
+
+    
+
+ }
