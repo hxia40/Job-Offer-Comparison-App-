@@ -27,4 +27,5 @@ public class CostOfLiving {
         this.cost = cost;
     }
 
+
 }
