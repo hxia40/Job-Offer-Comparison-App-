@@ -26,6 +26,9 @@ public class Job {
         int costOfLiving = 0;
         /* get cost of living from database passing city and state */
 
+        if (costOfLiving == 0) {
+            costOfLiving = getAvgCOL();
+        }
         return costOfLiving;
     }
 
