@@ -16,8 +16,6 @@ public class Job {
         int costOfLiving = getCostOfLiving(job.city,job.state);
         double costFactor = avgCOL / costOfLiving;
         job.yearlySalary = (int) (job.yearlySalary * costFactor);
-        job.leaveTime = (int) (job.leaveTime * costFactor);
-        job.retirementBenefits = (int) (job.retirementBenefits * costFactor);
         job.signingBonus = (int) (job.signingBonus * costFactor);
         job.yearlyBonus = (int) (job.yearlyBonus * costFactor);
         job.costOfLiving = costOfLiving;
@@ -36,6 +34,13 @@ public class Job {
         /* get all Jobs and calculate average COL*/
 
         return avgCOL;
+    }
+
+    public int getJobScore(Job job) {
+        int jobScore = 0;
+        job = getAdjustedSalary(job);
+        jobScore = job.yearlySalary + job.signingBonus + job.yearlyBonus + (job.yearlySalary * job.retirementBenefits) + (job.leaveTime * job.yearlySalary / 260);
+        return jobScore;
     }
 
 }
