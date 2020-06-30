@@ -1,5 +1,5 @@
 package edu.gatech.seclass.jobcompare6300;
-
+import edu.gatech.seclass.jobcompare6300.Weights;
 public class Job {
     private String company;
     private String city;
@@ -43,6 +43,20 @@ public class Job {
         int jobScore = 0;
         job = getAdjustedSalary(job);
         jobScore = job.yearlySalary + job.signingBonus + job.yearlyBonus + (job.yearlySalary * job.retirementBenefits) + (job.leaveTime * job.yearlySalary / 260);
+        return jobScore;
+    }
+
+    public int getWeightedJobScore(Job job) {
+        int jobScore = 0;
+        Weights weights = new Weights();
+        weights.getWeights();
+        int base = weights.getWeightSum(weights);
+        job = getAdjustedSalary(job);
+        jobScore = ( job.yearlySalary * weights.yearlySalaryWeight / base ) +
+                (job.signingBonus * weights.signingBonusWeight / base ) +
+                (job.yearlyBonus * weights.yearlyBonusWeight / base ) +
+                (job.yearlySalary * job.retirementBenefits * weights.retirementBenefitsWeight / base ) +
+                (job.leaveTime * job.yearlySalary / 260) * ( weights.leaveTimeWeight / base );
         return jobScore;
     }
 
