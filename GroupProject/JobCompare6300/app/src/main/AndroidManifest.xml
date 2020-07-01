@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CurrentJobDetails"></activity>
+        <activity android:name=".JobOfferList"></activity>
+        <activity android:name=".CurrentJobDetails" />
         <activity android:name=".JobOffers" />
         <activity android:name=".ComparisonSettings" />
         <activity android:name=".MainActivity">

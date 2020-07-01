@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void CompareJobOffers(View view){
-        Intent i = new Intent(getApplicationContext(),CompareJobOffers.class);
+        Intent i = new Intent(getApplicationContext(),JobOfferList.class);
         startActivity(i);
     }
 
