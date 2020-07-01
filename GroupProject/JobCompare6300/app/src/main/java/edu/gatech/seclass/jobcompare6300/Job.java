@@ -1,7 +1,9 @@
 package edu.gatech.seclass.jobcompare6300;
+import java.util.UUID;
+
 import edu.gatech.seclass.jobcompare6300.Weights;
 public class Job {
-    private int id;
+    private String id;
     private String company;
     private String city;
     private String state;
@@ -13,6 +15,14 @@ public class Job {
     private int leaveTime;
     private boolean current;
     private int jobScore;
+
+    public Job saveJob(Job job) {
+        job.id = UUID.randomUUID().toString();
+        job.costOfLiving = getCostOfLiving(job.city, job.state);
+        job.jobScore = getWeightedJobScore(job);
+        /* Save job to database */
+        return job;
+    }
 
     public Job getAdjustedSalary(Job job) {
         int avgCOL = getAvgCOL();
