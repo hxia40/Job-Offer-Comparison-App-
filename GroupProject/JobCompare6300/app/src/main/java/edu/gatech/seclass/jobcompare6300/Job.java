@@ -1,6 +1,7 @@
 package edu.gatech.seclass.jobcompare6300;
 import edu.gatech.seclass.jobcompare6300.Weights;
 public class Job {
+    private int id;
     private String company;
     private String city;
     private String state;
