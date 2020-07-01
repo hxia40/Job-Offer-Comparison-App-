@@ -34,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
     public void CurrentJobDetails(View view){
         Intent i = new Intent(getApplicationContext(),CurrentJobDetails.class);
         startActivity(i);

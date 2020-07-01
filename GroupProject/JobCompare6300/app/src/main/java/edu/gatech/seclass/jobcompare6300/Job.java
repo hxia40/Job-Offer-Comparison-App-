@@ -12,6 +12,7 @@ public class Job {
     private int retirementBenefits;
     private int leaveTime;
     private boolean current;
+    private int jobScore;
 
     public Job getAdjustedSalary(Job job) {
         int avgCOL = getAvgCOL();
