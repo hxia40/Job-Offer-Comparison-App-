@@ -41,12 +41,12 @@ public class Job {
         return avgCOL;
     }
 
-    public int getJobScore(Job job) {
+    /*public int getJobScore(Job job) {
         int jobScore = 0;
         job = getAdjustedSalary(job);
         jobScore = job.yearlySalary + job.signingBonus + job.yearlyBonus + (job.yearlySalary * job.retirementBenefits) + (job.leaveTime * job.yearlySalary / 260);
         return jobScore;
-    }
+    }*/
 
     public int getWeightedJobScore(Job job) {
         int jobScore = 0;
