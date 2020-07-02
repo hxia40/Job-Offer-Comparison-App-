@@ -4,6 +4,7 @@ import java.util.UUID;
 import edu.gatech.seclass.jobcompare6300.Weights;
 public class Job {
     private String id;
+    private String title;
     private String company;
     private String city;
     private String state;
@@ -21,6 +22,12 @@ public class Job {
         job.costOfLiving = getCostOfLiving(job.city, job.state);
         job.jobScore = getWeightedJobScore(job);
         /* Save job to database */
+        return job;
+    }
+
+    public Job getJobDetails(String id) {
+        Job job = new Job();
+        //get job details
         return job;
     }
 

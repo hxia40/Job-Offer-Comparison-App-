@@ -60,11 +60,13 @@ public class JobOfferList extends AppCompatActivity {
         else {
             text = "Select exactly 2 job offers for comparison";
         }
-
         int duration = Toast.LENGTH_SHORT;
         Toast toast = Toast.makeText(context, text, duration);
         toast.show();
-
+        if (selectedJobs.size() == 2) {
+            Intent i = new Intent(getApplicationContext(), JobOfferCompare.class);
+            startActivity(i);
+        }
     }
 
     private void cancelSelection() {
