@@ -3,11 +3,13 @@ package edu.gatech.seclass.jobcompare6300;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.ActionMode;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.AbsListView;
 import android.widget.ArrayAdapter;
 import android.widget.CheckedTextView;
@@ -38,6 +40,38 @@ public class JobOfferList extends AppCompatActivity {
         listView.setAdapter(adapter);
     }
 
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.btn_compare:
+                compareJobs();
+                break;
+            case R.id.btn_cancel:
+                cancelSelection();
+                break;
+        }
+    }
+
+    private void compareJobs() {
+        Context context = getApplicationContext();
+        CharSequence text = "";
+        if (selectedJobs.size() == 2) {
+            text = "Jobs selected: " + selectedJobs.get(0) + " and " + selectedJobs.get(1);
+        }
+        else {
+            text = "Select exactly 2 job offers for comparison";
+        }
+
+        int duration = Toast.LENGTH_SHORT;
+        Toast toast = Toast.makeText(context, text, duration);
+        toast.show();
+
+    }
+
+    private void cancelSelection() {
+        selectedJobs.clear();
+        this.finish();
+    }
+
     private void getJobs() {
         String[] items = {"01 Amazon SDE Seattle", "02 Amazon SDET Seattle", "03 Microsoft SE2 Redmond", "04 Google SE Sunnyvale"};
         for (String item : items) {
@@ -48,13 +82,7 @@ public class JobOfferList extends AppCompatActivity {
     AbsListView.MultiChoiceModeListener modeListener = new AbsListView.MultiChoiceModeListener() {
         @Override
         public void onItemCheckedStateChanged(ActionMode mode, int position, long id, boolean checked) {
-            if (selectedJobs.size() > 2){
-                Context context = getApplicationContext();
-                CharSequence text = "Select 2 offers only";
-                int duration = Toast.LENGTH_SHORT;
-                Toast toast = Toast.makeText(context, text, duration);
-                toast.show();
-            }
+
         }
 
         @Override
