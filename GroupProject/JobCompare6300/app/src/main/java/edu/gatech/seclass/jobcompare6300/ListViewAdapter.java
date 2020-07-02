@@ -6,7 +6,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -31,6 +34,22 @@ public class ListViewAdapter extends ArrayAdapter<String> {
         View row = inflater.inflate(R.layout.item_layout,parent,false);
         TextView job = row.findViewById(R.id.job);
         job.setText(jobs.get(position));
+        CheckBox checkBox = row.findViewById(R.id.checkBox);
+        checkBox.setVisibility(View.VISIBLE);
+        checkBox.setTag(position);
+
+        checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                int position = (int)buttonView.getTag();
+                if (JobOfferList.selectedJobs.contains(jobs.get(position))) {
+                    JobOfferList.selectedJobs.remove(jobs.get(position));
+                }
+                else {
+                    JobOfferList.selectedJobs.add(jobs.get(position));
+                }
+            }
+        });
 
         return row;
     }

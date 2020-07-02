@@ -2,10 +2,17 @@ package edu.gatech.seclass.jobcompare6300;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.ActionMode;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.AbsListView;
 import android.widget.ArrayAdapter;
 import android.widget.CheckedTextView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.lang.reflect.GenericArrayType;
 import java.util.ArrayList;
@@ -16,6 +23,8 @@ public class JobOfferList extends AppCompatActivity {
     private ListView listView;
     private ListViewAdapter adapter;
     private List<String> jobs = new ArrayList<>();
+    public static List<String> selectedJobs = new ArrayList<>();
+    public static boolean isActionMode = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,14 +32,61 @@ public class JobOfferList extends AppCompatActivity {
         setContentView(R.layout.activity_job_offer_list);
         getJobs();
         listView = findViewById(R.id.jobsListView);
+        listView.setChoiceMode(AbsListView.CHOICE_MODE_MULTIPLE_MODAL);
+        listView.setMultiChoiceModeListener(modeListener);
         adapter = new ListViewAdapter(jobs, this);
         listView.setAdapter(adapter);
     }
 
     private void getJobs() {
-        String[] items = {"Amazon SDE Seattle", "Amazon SDET Seattle", "Microsoft SE2 Redmond", "Google SE Sunnyvale"};
+        String[] items = {"01 Amazon SDE Seattle", "02 Amazon SDET Seattle", "03 Microsoft SE2 Redmond", "04 Google SE Sunnyvale"};
         for (String item : items) {
             jobs.add(item);
         }
     }
+
+    AbsListView.MultiChoiceModeListener modeListener = new AbsListView.MultiChoiceModeListener() {
+        @Override
+        public void onItemCheckedStateChanged(ActionMode mode, int position, long id, boolean checked) {
+            if (selectedJobs.size() > 2){
+                Context context = getApplicationContext();
+                CharSequence text = "Select 2 offers only";
+                int duration = Toast.LENGTH_SHORT;
+                Toast toast = Toast.makeText(context, text, duration);
+                toast.show();
+            }
+            else {
+                if (selectedJobs.contains(jobs.get(position))) {
+                    selectedJobs.remove(jobs.get(position));
+                }
+                else {
+                    selectedJobs.add(jobs.get(position));
+                }
+            }
+
+        }
+
+        @Override
+        public boolean onCreateActionMode(ActionMode mode, Menu menu) {
+            isActionMode = true;
+            return false;
+        }
+
+        @Override
+        public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
+            return false;
+        }
+
+        @Override
+        public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
+
+            return false;
+        }
+
+        @Override
+        public void onDestroyActionMode(ActionMode mode) {
+            isActionMode = false;
+            selectedJobs.clear();
+        }
+    };
 }
