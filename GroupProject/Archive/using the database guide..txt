@@ -1,0 +1,73 @@
+
+
+The structure of the database is found in database/JobOffer.java
+
+This is basically a class where you can store values of an instance of the joboffer class object.
+The great thing with this is that you can call that instance later on even after closing the app.
+
+Any value in this class is an attribute that we can call or set.
+
+Right now it only has "company", ID and "city", I'll have to add the rest of the columns we need.
+
+################################################################################################
+
+The database/DAI.java file is the classes access portion.
+
+This has the ability to insert, update, delete records.
+
+This is also where you can add queries.
+
+example:
+
+@Query("Select city from offers where id = 1")
+    public String readCity();
+	
+	so in the code if you went like 
+
+	String city_var = readCity();
+	
+	you would get the city name with ID 1 in our database. We will want to add things like this where we pass in ID in the future.
+	
+#########################################################################################################
+
+To use the database in your code, you must have this in your java.
+
+AppDatabase database = Room.databaseBuilder(this, AppDatabase.class, "offers")
+                .allowMainThreadQueries()
+                .build();
+
+########################################################################################################
+
+I will show how to add values to the database (you need the above "Room.databaseBuilder" code in same file to do these actions).
+
+		#you create a variable of type DAI to store your instance of database object
+		DAI DAI = database.AppDatabaseObject();
+		# Since our memory is just instance of our Joboffer class make an instance of that structure
+        JobOffer offer = new JobOffer();
+		# Set offer attributes
+        offer.setCity("test_city");
+        offer.setCompany("test_company");
+		# run the insert method.
+        DAI.addJob(offer);
+		
+######################################################################################################3
+
+How to display results from database on your page ((you need the above "Room.databaseBuilder" code in same file to do these actions)
+
+		# these two lines are just standard code
+		EditText rl = (EditText)findViewById(R.id.editText2);
+        EditText r2 = (EditText)findViewById(R.id.editText3);
+		
+		# we are setting our edit text objects to have the values read from the DAI queries. 
+		# for example readCompany() was:
+		
+			#@Query("Select company from offers where id = 1")
+			#public String readCompany();
+	
+        rl.setText(DAI.readCompany());
+        r2.setText(DAI.readCity());
+		
+		
+	
+	
+	
