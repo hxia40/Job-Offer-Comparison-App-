@@ -34,7 +34,7 @@ public class ListViewAdapter extends ArrayAdapter<String> {
         View row = inflater.inflate(R.layout.item_layout,parent,false);
         TextView job = row.findViewById(R.id.job);
         job.setText(jobs.get(position));
-        CheckBox checkBox = row.findViewById(R.id.checkBox);
+        final CheckBox checkBox = row.findViewById(R.id.checkBox);
         checkBox.setVisibility(View.VISIBLE);
         checkBox.setTag(position);
 
@@ -42,11 +42,17 @@ public class ListViewAdapter extends ArrayAdapter<String> {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 int position = (int)buttonView.getTag();
+
                 if (JobOfferList.selectedJobs.contains(jobs.get(position))) {
                     JobOfferList.selectedJobs.remove(jobs.get(position));
                 }
                 else {
-                    JobOfferList.selectedJobs.add(jobs.get(position));
+                    if (JobOfferList.selectedJobs.size() > 1) {
+                        checkBox.setChecked(false);
+                    }
+                    else {
+                        JobOfferList.selectedJobs.add(jobs.get(position));
+                    }
                 }
             }
         });

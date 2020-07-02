@@ -55,15 +55,6 @@ public class JobOfferList extends AppCompatActivity {
                 Toast toast = Toast.makeText(context, text, duration);
                 toast.show();
             }
-            else {
-                if (selectedJobs.contains(jobs.get(position))) {
-                    selectedJobs.remove(jobs.get(position));
-                }
-                else {
-                    selectedJobs.add(jobs.get(position));
-                }
-            }
-
         }
 
         @Override
