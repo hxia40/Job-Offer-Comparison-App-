@@ -38,6 +38,7 @@ public class JobOfferList extends AppCompatActivity {
         listView.setMultiChoiceModeListener(modeListener);
         adapter = new ListViewAdapter(jobs, this);
         listView.setAdapter(adapter);
+        selectedJobs.clear();
     }
 
     public void onClick(View view) {
