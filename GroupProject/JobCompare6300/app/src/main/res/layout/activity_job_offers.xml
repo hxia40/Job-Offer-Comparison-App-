@@ -307,7 +307,12 @@
                     android:ems="10"
                     android:inputType="textPersonName" />
             </LinearLayout>
-
+            <!--            // hui test-->
+            <TextView
+                android:id="@+id/huiOffer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <!--            // hui test-->
         </LinearLayout>
 
         <LinearLayout

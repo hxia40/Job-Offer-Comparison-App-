@@ -8,6 +8,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+// hui test
+import android.content.SharedPreferences;
+import android.content.Context;
+// hui test
+
 public class JobOffers extends AppCompatActivity implements View.OnClickListener {
     EditText title, company, city, state, costOfLiving, yearlySalary, signingBonus, yearlyBonus, retirementBonus, leaveTime;
     Button add, save, compare, cancel;
@@ -58,6 +63,14 @@ public class JobOffers extends AppCompatActivity implements View.OnClickListener
         save.setOnClickListener(this);
         compare.setOnClickListener(this);
         cancel.setOnClickListener(this);
+
+        // hui test
+        TextView yearlySalaryWeight = (TextView) findViewById(R.id.huiOffer);
+        SharedPreferences mPreferences = getSharedPreferences(ComparisonSettings.PREFS_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = mPreferences.edit();
+        int yswValue = mPreferences.getInt("ysw", 1);
+        yearlySalaryWeight.setText(String.valueOf(yswValue));
+        // hui test
     }
 
     private void compareJobOffers() {
