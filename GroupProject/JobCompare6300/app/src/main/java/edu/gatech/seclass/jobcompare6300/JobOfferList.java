@@ -65,6 +65,8 @@ public class JobOfferList extends AppCompatActivity {
         toast.show();
         if (selectedJobs.size() == 2) {
             Intent i = new Intent(getApplicationContext(), JobOfferCompare.class);
+            i.putExtra("Job1", selectedJobs.get(0));
+            i.putExtra("Job2", selectedJobs.get(1));
             startActivity(i);
         }
     }
@@ -75,6 +77,8 @@ public class JobOfferList extends AppCompatActivity {
     }
 
     private void getJobs() {
+//        Populate jobs ranked by job score
+        // Get the jobs from database (weighted and COL adjusted sorted list)
         String[] items = {"01 Amazon SDE Seattle", "02 Amazon SDET Seattle", "03 Microsoft SE2 Redmond", "04 Google SE Sunnyvale"};
         for (String item : items) {
             jobs.add(item);

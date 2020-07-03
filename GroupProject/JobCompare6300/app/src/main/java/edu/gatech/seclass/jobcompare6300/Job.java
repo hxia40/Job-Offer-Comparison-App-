@@ -20,7 +20,7 @@ public class Job {
     public Job saveJob(Job job) {
         job.id = UUID.randomUUID().toString();
         job.costOfLiving = getCostOfLiving(job.city, job.state);
-        job.jobScore = getWeightedJobScore(job);
+//        job.jobScore = getWeightedJobScore(job, weights);
         /* Save job to database */
         return job;
     }
@@ -66,10 +66,10 @@ public class Job {
         return jobScore;
     }*/
 
-    public int getWeightedJobScore(Job job) {
+    public int getWeightedJobScore(Job job, Weights weights) {
         int jobScore = 0;
-        Weights weights = new Weights();
-        weights.getWeights();
+//        Weights weights = new Weights();
+//        weights.getWeights();
         int base = weights.getWeightSum(weights);
         job = getAdjustedSalary(job);
         jobScore = ( job.yearlySalary * weights.yearlySalaryWeight / base ) +

@@ -1,9 +1,11 @@
 package edu.gatech.seclass.jobcompare6300;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -29,7 +31,7 @@ public class JobOfferCompare extends AppCompatActivity {
     private EditText job2_bonus_id;
     private EditText job2_retirement_id;
     private EditText job2_leave_id;
-
+    public String job1, job2;
 
     private String
             job1_title = "SDE",
@@ -59,6 +61,10 @@ public class JobOfferCompare extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_job_offer_compare);
 
+        Intent i = getIntent();
+        job1 = i.getStringExtra("Job1");
+        job2 = i.getStringExtra("Job2");
+
         job1_title_id = findViewById(R.id.txt_job_offer1_title);
         job1_company_id = findViewById(R.id.txt_job_offer1_company);
         job1_city_id = findViewById(R.id.txt_job_offer1_city);
@@ -80,6 +86,8 @@ public class JobOfferCompare extends AppCompatActivity {
         job2_bonus_id = findViewById(R.id.txt_job_offer2_yearly_bonus);
         job2_retirement_id = findViewById(R.id.txt_job_offer2_retirement_bonus);
         job2_leave_id = findViewById(R.id.txt_job_offer2_leave_time);
+
+        //Populate job1 and job2
 
         job1_title_id.setText(job1_title);
         job1_company_id.setText(job1_company);
@@ -103,6 +111,8 @@ public class JobOfferCompare extends AppCompatActivity {
         job2_retirement_id.setText(job2_retirement);
         job2_leave_id.setText(job2_leave);
 
+
+
     }
 
     public void onClick(View view) {
@@ -111,6 +121,12 @@ public class JobOfferCompare extends AppCompatActivity {
                 this.finish();
                 break;
             case R.id.btn_home:
+                Context context = getApplicationContext();
+                CharSequence text = job1;
+                int duration = Toast.LENGTH_SHORT;
+                Toast toast = Toast.makeText(context, text, duration);
+                toast.show();
+
                 Intent i = new Intent(getApplicationContext(),MainActivity.class);
                 startActivity(i);
                 break;
