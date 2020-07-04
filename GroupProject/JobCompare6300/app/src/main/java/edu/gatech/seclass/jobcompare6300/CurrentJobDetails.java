@@ -100,25 +100,74 @@ public class CurrentJobDetails extends AppCompatActivity implements View.OnClick
 
     private void saveCurrentJobDetails() {
         System.out.println("Reached here");
-        AppDatabase database = Room.databaseBuilder(this, AppDatabase.class, "offers")
-                .allowMainThreadQueries()
-                .build();
 
-        DAI DAI = database.AppDatabaseObject();
-        JobOffer offer = new JobOffer();
-        offer.setCity(city.getText().toString());
-        offer.setCompany(company.getText().toString());
-        offer.setcostOfLiving((Double.valueOf(costOfLiving.getText().toString())));
-        offer.setleaveTime(Integer.valueOf(leaveTime.getText().toString()));
-        offer.setretiremnetBenifits(Float.valueOf(retirementBonus.getText().toString()));
-        offer.setsigningBonus(Double.valueOf(signingBonus.getText().toString()));
-        offer.setstate(state.getText().toString());
-        offer.setyearlyBonus(Double.valueOf(yearlyBonus.getText().toString()));
-        offer.setyearlySalary(Double.valueOf(yearlySalary.getText().toString()));
-        offer.setcurrent(true);
+        if(!validateMandatoryFields()) {
+            AppDatabase database = Room.databaseBuilder(this, AppDatabase.class, "offers")
+                    .allowMainThreadQueries()
+                    .build();
 
-        DAI.addJob(offer);
+            DAI DAI = database.AppDatabaseObject();
+            JobOffer offer = new JobOffer();
+            offer.setCity(city.getText().toString());
+            offer.setCompany(company.getText().toString());
+            offer.setcostOfLiving((Double.valueOf(costOfLiving.getText().toString())));
+            offer.setleaveTime(Integer.valueOf(leaveTime.getText().toString()));
+            offer.setretiremnetBenifits(Float.valueOf(retirementBonus.getText().toString()));
+            offer.setsigningBonus(Double.valueOf(signingBonus.getText().toString()));
+            offer.setstate(state.getText().toString());
+            offer.setyearlyBonus(Double.valueOf(yearlyBonus.getText().toString()));
+            offer.setyearlySalary(Double.valueOf(yearlySalary.getText().toString()));
+            offer.setcurrent(true);
 
-        System.out.println(DAI.readCurrentcompany());
+            DAI.addJob(offer);
+
+            System.out.println(DAI.readCurrentcompany());
+        }
+    }
+
+    private boolean validateMandatoryFields(){
+        boolean isError = false;
+        if( title.getText().toString().trim().equals("")){
+            title.setError( "Title is required!" );
+            title.setHint("Please enter Title");
+            isError = true;
+        }else if( company.getText().toString().trim().equals("")){
+            company.setError( "Company is required!" );
+            company.setHint("Please enter Company");
+            isError = true;
+        }if( city.getText().toString().trim().equals("")){
+            city.setError( "City is required!" );
+            city.setHint("Please enter City");
+            isError = true;
+        }if( state.getText().toString().trim().equals("")){
+            state.setError( "State is required!" );
+            state.setHint("Please enter State");
+            isError = true;
+        }if( costOfLiving.getText().toString().trim().equals("")){
+            costOfLiving.setError( "Cost Of Living is required!" );
+            costOfLiving.setHint("Please enter Cost Of Living");
+            isError = true;
+        }if( yearlySalary.getText().toString().trim().equals("")){
+            yearlySalary.setError( "Yearly Salary is required!" );
+            yearlySalary.setHint("Please enter Yearly Salary");
+            isError = true;
+        }if( signingBonus.getText().toString().trim().equals("")){
+            signingBonus.setError( "Signing Bonus is required!" );
+            signingBonus.setHint("Please enter Signing Bonus");
+            isError = true;
+        }if( yearlyBonus.getText().toString().trim().equals("")){
+            yearlyBonus.setError( "Yearly Bonus is required!" );
+            yearlyBonus.setHint("Please enter Yearly Bonus");
+            isError = true;
+        }if( retirementBonus.getText().toString().trim().equals("")){
+            retirementBonus.setError( "Retirement Bonus is required!" );
+            retirementBonus.setHint("Please enter Retirement Bonus");
+            isError = true;
+        }if( leaveTime.getText().toString().trim().equals("")){
+            leaveTime.setError( "Leave Time is required!" );
+            leaveTime.setHint("Please enter Leave Time");
+            isError = true;
+        }
+        return isError;
     }
 }
