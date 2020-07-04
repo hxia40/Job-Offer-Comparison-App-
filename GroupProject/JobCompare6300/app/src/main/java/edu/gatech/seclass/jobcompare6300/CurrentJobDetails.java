@@ -131,7 +131,7 @@ public class CurrentJobDetails extends AppCompatActivity implements View.OnClick
             title.setError( "Title is required!" );
             title.setHint("Please enter Title");
             isError = true;
-        }else if( company.getText().toString().trim().equals("")){
+        } if( company.getText().toString().trim().equals("")){
             company.setError( "Company is required!" );
             company.setHint("Please enter Company");
             isError = true;
