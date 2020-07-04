@@ -105,7 +105,7 @@ public class JobOffers extends AppCompatActivity implements View.OnClickListener
     }
 
     private void cancelJobOffers() {
-//        System.out.println(title.getText().toString() + company.getText().toString() + city.getText().toString() + state.getText().toString() + costOfLiving.getText().toString() + yearlySalary.getText().toString() + signingBonus.getText().toString() + yearlyBonus.getText().toString() + retirementBonus.getText().toString() + leaveTime.getText().toString());
+        finish();
     }
 
     private void saveJobOffers() {

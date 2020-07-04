@@ -96,6 +96,7 @@ public class CurrentJobDetails extends AppCompatActivity implements View.OnClick
     }
 
     private void cancelCurrentJobDetails() {
+        finish();
     }
 
     private void saveCurrentJobDetails() {
