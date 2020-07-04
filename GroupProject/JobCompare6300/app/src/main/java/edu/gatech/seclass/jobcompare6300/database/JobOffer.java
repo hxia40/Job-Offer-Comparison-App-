@@ -7,10 +7,10 @@ import androidx.room.PrimaryKey;
 @Entity(tableName = "offers")
 public class JobOffer {
     @PrimaryKey(autoGenerate = true)
-    private int id;
+    public int id;
 
     @ColumnInfo(name = "company")
-    private String company;
+    public String company;
 
     public int getId() {
         return id;
@@ -37,101 +37,112 @@ public class JobOffer {
     }
 
     @ColumnInfo(name = "city")
-    private String city;
+    public String city;
     
     // state
-	//@ColumnInfo(name = "state")
-    //private String state;
+	@ColumnInfo(name = "state")
+    public String state;
 
-	//public String getstate() {
-    //    return state;
-    //}
+	public String getstate() {
+        return state;
+    }
 
-    //public void setstate(String state) {
-    //    this.state = state;
-    //}
-	
+    public void setstate(String state) {
+        this.state = state;
+    }
+
+    // state
+    @ColumnInfo(name = "current")
+    public boolean current;
+
+    public boolean getcurrent() {
+        return current;
+    }
+
+    public void setcurrent(boolean current) {
+        this.current = current;
+    }
 	
 	
 	// costOfLiving
-	//@ColumnInfo(name = "costOfLiving")
-    //private double costOfLiving;
+	@ColumnInfo(name = "costOfLiving")
+    public double costOfLiving;
 
-	//public double getcostOfLiving() {
-    //    return costOfLiving;
-    //}
+	public double getcostOfLiving() {
+        return costOfLiving;
+    }
 
-    //public void setcostOfLiving(double costOfLiving) {
-    //    this.costOfLiving = costOfLiving;
-    //}
+    public void setcostOfLiving(double costOfLiving) {
+        this.costOfLiving = costOfLiving;
+    }
 	
 	
 	// yearlySalary
-	//@ColumnInfo(name = "yearlySalary")
-    //private double yearlySalary;
+	@ColumnInfo(name = "yearlySalary")
+    public double yearlySalary;
 
-	//public double getyearlySalary() {
-    //    return yearlySalary;
-    //}
+	public double getyearlySalary() {
+        return yearlySalary;
+    }
 
-    //public void setyearlySalary(double yearlySalary) {
-    //    this.yearlySalary = yearlySalary;
-    //}
+    public void setyearlySalary(double yearlySalary) {
+        this.yearlySalary = yearlySalary;
+    }
 	
 	
 	// signingBonus
-	//@ColumnInfo(name = "signingBonus")
-    //private double signingBonus;
+	@ColumnInfo(name = "signingBonus")
+    public double signingBonus;
 
-	//public double getsigningBonus() {
-    //    return signingBonus;
-    //}
+	public double getsigningBonus() {
+        return signingBonus;
+    }
 
-    //public void setyearlySalary(double signingBonus) {
-    //    this.signingBonus = signingBonus;
-    //}
+    public void setsigningBonus(double signingBonus) {
+        this.signingBonus = signingBonus;
+    }
 	
 	
 	
 	// yearlyBonus
-	//@ColumnInfo(name = "yearlyBonus")
-    //private double yearlyBonus;
+	@ColumnInfo(name = "yearlyBonus")
+    public double yearlyBonus;
 
-	//public double getyearlyBonus() {
-    //    return yearlyBonus;
-    //}
+	public double getyearlyBonus() {
+        return yearlyBonus;
+    }
 
-    //public void setyearlyBonus(double yearlyBonus) {
-    //    this.yearlyBonus = yearlyBonus;
-    //}
+    public void setyearlyBonus(double yearlyBonus) {
+        this.yearlyBonus = yearlyBonus;
+    }
 	
 	
 	
 	
 	
 	// retiremnetBenifits
-	//@ColumnInfo(name = "retiremnetBenifits")
-    //private float retiremnetBenifits;
+	@ColumnInfo(name = "retiremnetBenifits")
+    public float retiremnetBenifits;
 
-	//public float getretiremnetBenifits() {
-    //    return retiremnetBenifits;
-    //}
+	public float getretiremnetBenifits() {
+        return retiremnetBenifits;
+    }
 
-    //public void setretiremnetBenifits(float retiremnetBenifits) {
-    //    this.retiremnetBenifits = retiremnetBenifits;
-    //}
+    public void setretiremnetBenifits(float retiremnetBenifits) {
+        this.retiremnetBenifits = retiremnetBenifits;
+    }
 	
 	
 	// leaveTime
-	//@ColumnInfo(name = "leaveTime")
-    //private int leaveTime;
+	@ColumnInfo(name = "leaveTime")
+    public int leaveTime;
 
-	//public int getleaveTime() {
-    //    return leaveTime;
-    //}
+	public int getleaveTime() {
+        return leaveTime;
+    }
 
-    //public void setleaveTime(int leaveTime) {
-    //    this.leaveTime = leaveTime;
-    //}
+    public void setleaveTime(int leaveTime) {
+        this.leaveTime = leaveTime;
+    }
 
 }

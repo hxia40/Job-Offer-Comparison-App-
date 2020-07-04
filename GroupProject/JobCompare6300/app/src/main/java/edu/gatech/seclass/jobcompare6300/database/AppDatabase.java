@@ -6,7 +6,7 @@ import androidx.room.RoomDatabase;
 
 
 
-@Database(entities = {JobOffer.class}, version = 1)
+@Database(entities = {JobOffer.class}, version = 2)
 public abstract class AppDatabase extends RoomDatabase {
     public abstract DAI AppDatabaseObject();
 }

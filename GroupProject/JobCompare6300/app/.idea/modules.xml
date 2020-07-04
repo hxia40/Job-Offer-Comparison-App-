@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/app.iml" filepath="$PROJECT_DIR$/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../JobCompare6300.iml" filepath="$PROJECT_DIR$/../JobCompare6300.iml" group="JobCompare6300" />
+      <module fileurl="file://$PROJECT_DIR$/app.iml" filepath="$PROJECT_DIR$/app.iml" group="JobCompare6300/app" />
     </modules>
   </component>
 </project>

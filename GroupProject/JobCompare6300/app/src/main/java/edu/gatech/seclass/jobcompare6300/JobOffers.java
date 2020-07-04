@@ -1,12 +1,17 @@
 package edu.gatech.seclass.jobcompare6300;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import edu.gatech.seclass.jobcompare6300.database.AppDatabase;
+import edu.gatech.seclass.jobcompare6300.database.DAI;
+import edu.gatech.seclass.jobcompare6300.database.JobOffer;
 
 public class JobOffers extends AppCompatActivity implements View.OnClickListener {
     EditText title, company, city, state, costOfLiving, yearlySalary, signingBonus, yearlyBonus, retirementBonus, leaveTime;
@@ -66,6 +71,23 @@ public class JobOffers extends AppCompatActivity implements View.OnClickListener
 
     private void addJobOffers() {
 //        System.out.println(title.getText().toString() + company.getText().toString() + city.getText().toString() + state.getText().toString() + costOfLiving.getText().toString() + yearlySalary.getText().toString() + signingBonus.getText().toString() + yearlyBonus.getText().toString() + retirementBonus.getText().toString() + leaveTime.getText().toString());
+        AppDatabase database = Room.databaseBuilder(this, AppDatabase.class, "offers")
+                .allowMainThreadQueries()
+                .build();
+
+        DAI DAI = database.AppDatabaseObject();
+        JobOffer offer = new JobOffer();
+        offer.setCity(city.getText().toString());
+        offer.setCompany(company.getText().toString());
+        offer.setcostOfLiving((Double.valueOf(costOfLiving.getText().toString())));
+        offer.setleaveTime(Integer.valueOf(leaveTime.getText().toString()));
+        offer.setretiremnetBenifits(Float.valueOf(retirementBonus.getText().toString()));
+        offer.setsigningBonus(Double.valueOf(signingBonus.getText().toString()));
+        offer.setstate(state.getText().toString());
+        offer.setyearlyBonus(Double.valueOf(yearlyBonus.getText().toString()));
+        offer.setyearlySalary(Double.valueOf(yearlySalary.getText().toString()));
+
+        DAI.addJob(offer);
     }
 
     private void cancelJobOffers() {
@@ -74,5 +96,26 @@ public class JobOffers extends AppCompatActivity implements View.OnClickListener
 
     private void saveJobOffers() {
 //        System.out.println(title.getText().toString() + company.getText().toString() + city.getText().toString() + state.getText().toString() + costOfLiving.getText().toString() + yearlySalary.getText().toString() + signingBonus.getText().toString() + yearlyBonus.getText().toString() + retirementBonus.getText().toString() + leaveTime.getText().toString());
+
+        AppDatabase database = Room.databaseBuilder(this, AppDatabase.class, "offers")
+                .allowMainThreadQueries()
+                .fallbackToDestructiveMigration()
+                .build();
+
+        DAI DAI = database.AppDatabaseObject();
+        JobOffer offer = new JobOffer();
+        offer.setCity(city.getText().toString());
+        offer.setCompany(company.getText().toString());
+        offer.setcostOfLiving((Double.valueOf(costOfLiving.getText().toString())));
+        offer.setleaveTime(Integer.valueOf(leaveTime.getText().toString()));
+        offer.setretiremnetBenifits(Float.valueOf(retirementBonus.getText().toString()));
+        offer.setsigningBonus(Double.valueOf(signingBonus.getText().toString()));
+        offer.setstate(state.getText().toString());
+        offer.setyearlyBonus(Double.valueOf(yearlyBonus.getText().toString()));
+        offer.setyearlySalary(Double.valueOf(yearlySalary.getText().toString()));
+
+        DAI.addJob(offer);
+
+        System.out.println(DAI.readCompany());
     }
 }
