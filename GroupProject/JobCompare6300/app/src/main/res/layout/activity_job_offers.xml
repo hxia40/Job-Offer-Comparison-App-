@@ -196,6 +196,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="4"
+                    android:digits="0123456789."
                     android:ems="10"
                     android:inputType="textPersonName" />
             </LinearLayout>
@@ -223,6 +224,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="5"
+                    android:digits="0123456789."
                     android:ems="10"
                     android:inputType="textPersonName" />
             </LinearLayout>
@@ -250,6 +252,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="4.5"
+                    android:digits="0123456789."
                     android:ems="10"
                     android:inputType="textPersonName" />
             </LinearLayout>
@@ -277,6 +280,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="5.75"
+                    android:digits="0123456789."
                     android:ems="10"
                     android:inputType="textPersonName" />
             </LinearLayout>
@@ -307,7 +311,12 @@
                     android:ems="10"
                     android:inputType="textPersonName" />
             </LinearLayout>
-
+            <!--            // hui test-->
+            <TextView
+                android:id="@+id/huiOffer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <!--            // hui test-->
         </LinearLayout>
 
         <LinearLayout

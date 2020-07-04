@@ -3,6 +3,7 @@ package edu.gatech.seclass.jobcompare6300;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.view.View;
 import android.widget.Button;
@@ -12,7 +13,6 @@ import android.widget.TextView;
 import android.os.Bundle;
 
 import java.util.List;
-
 import edu.gatech.seclass.jobcompare6300.database.AppDatabase;
 import edu.gatech.seclass.jobcompare6300.database.DAI;
 import edu.gatech.seclass.jobcompare6300.database.JobOffer;
@@ -24,15 +24,9 @@ public class ComparisonSettings extends AppCompatActivity {
     private EditText retirementBenefitsWeight;
     private EditText leaveTimeWeight;
     private Button saveButton;
-    private Button cancelButton;
-    private SharedPreferences myPrefs;
-    private static final String PREFS_NAME = "myPrefFile";
-
-    private TextView testText1;
-    private TextView testText2;
-    private TextView testText3;
-    private TextView testText4;
-    private TextView testText5;
+    private Button resetButton;
+    public SharedPreferences myPrefs;
+    public static final String PREFS_NAME = "myPrefFile";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,36 +39,31 @@ public class ComparisonSettings extends AppCompatActivity {
         retirementBenefitsWeight = (EditText) findViewById(R.id.rbw);
         leaveTimeWeight = (EditText) findViewById(R.id.ltw);
         saveButton = (Button) findViewById(R.id.saveButton);
+        resetButton = (Button) findViewById(R.id.resetButton);
+        myPrefs = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
 
-        // FOR TESTING ONLY
-        testText1 = (TextView) findViewById(R.id.testText1);
-        testText2 = (TextView) findViewById(R.id.testText2);
-        testText3 = (TextView) findViewById(R.id.testText3);
-        testText4 = (TextView) findViewById(R.id.testText4);
-        testText5 = (TextView) findViewById(R.id.testText5);
-        // FOR TESTING ONLY
 
         // get data
-        SharedPreferences prefs = getSharedPreferences(PREFS_NAME,0);
+        SharedPreferences prefs = getSharedPreferences(PREFS_NAME,Context.MODE_PRIVATE);
         if (prefs.contains("ysw")){
             int yswValue = prefs.getInt("ysw", 1);
-            testText1.setText(String.valueOf(yswValue));
+            yearlySalaryWeight.setText(String.valueOf(yswValue));
         }
         if (prefs.contains("sbw")){
             int sbwValue = prefs.getInt("sbw", 1);
-            testText2.setText(String.valueOf(sbwValue));
+            signingBonusWeight.setText(String.valueOf(sbwValue));
         }
         if (prefs.contains("ybw")){
             int ybwValue = prefs.getInt("ybw", 1);
-            testText3.setText(String.valueOf(ybwValue));
+            yearlyBonusWeight.setText(String.valueOf(ybwValue));
         }
         if (prefs.contains("rbw")){
             int rbwValue = prefs.getInt("rbw", 1);
-            testText4.setText(String.valueOf(rbwValue));
+            retirementBenefitsWeight.setText(String.valueOf(rbwValue));
         }
         if (prefs.contains("ltw")){
             int ltwValue = prefs.getInt("ltw", 1);
-            testText5.setText(String.valueOf(ltwValue));
+            leaveTimeWeight.setText(String.valueOf(ltwValue));
         }
 
     }
@@ -111,30 +100,63 @@ public class ComparisonSettings extends AppCompatActivity {
             editor.putInt("ltw", Integer.parseInt(leaveTimeWeight.getText().toString()));
             editor.commit();
 
-            // show preference data - FOR TESTING ONLY
-            SharedPreferences prefs = getSharedPreferences(PREFS_NAME, 0);
-            if (prefs.contains("ysw")) {
+            // show preference data in place
+            SharedPreferences prefs = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+            if (prefs.contains("ysw")){
                 int yswValue = prefs.getInt("ysw", 1);
-                testText1.setText(String.valueOf(yswValue));
+                yearlySalaryWeight.setText(String.valueOf(yswValue));
             }
-            if (prefs.contains("sbw")) {
+            if (prefs.contains("sbw")){
                 int sbwValue = prefs.getInt("sbw", 1);
-                testText2.setText(String.valueOf(sbwValue));
+                signingBonusWeight.setText(String.valueOf(sbwValue));
             }
-            if (prefs.contains("ybw")) {
+            if (prefs.contains("ybw")){
                 int ybwValue = prefs.getInt("ybw", 1);
-                testText3.setText(String.valueOf(ybwValue));
+                yearlyBonusWeight.setText(String.valueOf(ybwValue));
             }
-            if (prefs.contains("rbw")) {
+            if (prefs.contains("rbw")){
                 int rbwValue = prefs.getInt("rbw", 1);
-                testText4.setText(String.valueOf(rbwValue));
+                retirementBenefitsWeight.setText(String.valueOf(rbwValue));
             }
-            if (prefs.contains("ltw")) {
+            if (prefs.contains("ltw")){
                 int ltwValue = prefs.getInt("ltw", 1);
-                testText5.setText(String.valueOf(ltwValue));
+                leaveTimeWeight.setText(String.valueOf(ltwValue));
             }
-            // show preference data - FOR TESTING ONLY
+            // show preference data in place
+        }
+    }
+
+    public void onClickReset(View v) {
+        SharedPreferences.Editor editor = myPrefs.edit();
+        editor.putInt("ysw", 1);
+        editor.putInt("sbw", 1);
+        editor.putInt("ybw", 1);
+        editor.putInt("rbw", 1);
+        editor.putInt("ltw", 1);
+        editor.commit();
+        SharedPreferences prefs = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+        if (prefs.contains("ysw")){
+            int yswValue = prefs.getInt("ysw", 1);
+            yearlySalaryWeight.setText(String.valueOf(yswValue));
+        }
+        if (prefs.contains("sbw")){
+            int sbwValue = prefs.getInt("sbw", 1);
+            signingBonusWeight.setText(String.valueOf(sbwValue));
+        }
+        if (prefs.contains("ybw")){
+            int ybwValue = prefs.getInt("ybw", 1);
+            yearlyBonusWeight.setText(String.valueOf(ybwValue));
+        }
+        if (prefs.contains("rbw")){
+            int rbwValue = prefs.getInt("rbw", 1);
+            retirementBenefitsWeight.setText(String.valueOf(rbwValue));
+        }
+        if (prefs.contains("ltw")){
+            int ltwValue = prefs.getInt("ltw", 1);
+            leaveTimeWeight.setText(String.valueOf(ltwValue));
         }
 
     }
+
+
 }
