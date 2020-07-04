@@ -130,31 +130,9 @@ public class JobOffers extends AppCompatActivity implements View.OnClickListener
 
             DAI.addJob(offer);
 
-            System.out.println(DAI.readCompany());
+            //System.out.println(DAI.readCompany());
         }
     }
-
-        AppDatabase database = Room.databaseBuilder(this, AppDatabase.class, "offers")
-                .allowMainThreadQueries()
-                .fallbackToDestructiveMigration()
-                .build();
-
-        DAI DAI = database.AppDatabaseObject();
-        JobOffer offer = new JobOffer();
-        offer.settitle(title.getText().toString());
-        offer.setCity(city.getText().toString());
-        offer.setCompany(company.getText().toString());
-        offer.setcostOfLiving((Double.valueOf(costOfLiving.getText().toString())));
-        offer.setleaveTime(Integer.valueOf(leaveTime.getText().toString()));
-        offer.setretiremnetBenifits(Float.valueOf(retirementBonus.getText().toString()));
-        offer.setsigningBonus(Double.valueOf(signingBonus.getText().toString()));
-        offer.setstate(state.getText().toString());
-        offer.setyearlyBonus(Double.valueOf(yearlyBonus.getText().toString()));
-        offer.setyearlySalary(Double.valueOf(yearlySalary.getText().toString()));
-
-        DAI.addJob(offer);
-
-        //System.out.println(DAI.readCompany());
     
 	private boolean validateMandatoryFields(){
         boolean isError = false;
