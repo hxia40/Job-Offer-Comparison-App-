@@ -38,7 +38,20 @@ public class JobOffer {
 
     @ColumnInfo(name = "city")
     public String city;
-    
+
+
+    // title
+    @ColumnInfo(name = "title")
+    public String title;
+
+    public String gettitle() {
+        return title;
+    }
+
+    public void settitle(String title) {
+        this.title = title;
+    }
+
     // state
 	@ColumnInfo(name = "state")
     public String state;

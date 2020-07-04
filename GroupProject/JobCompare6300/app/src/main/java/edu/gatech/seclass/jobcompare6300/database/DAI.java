@@ -21,11 +21,20 @@ public interface DAI {
     @Query("Select company from offers")
     public List<String> readJob();
 
-    @Query("Select company from offers where id = 1")
-    public String readCompany();
+    @Query("Select company from (Select company, (:ysw * yearlySalary/:base) + (:sbw * signingBonus/:base) + (:ybw * yearlyBonus/:base) + (yearlySalary * retiremnetBenifits * :rbw/:base) + (leaveTime * yearlySalary/260) * (:ltw/:base) as rank from offers order by rank desc)")
+    public String[] readCompany(int ysw, int sbw, int ybw, int rbw, int ltw, int base);
 
-    @Query("Select city from offers where id = 1")
-    public String readCity();
+
+    @Query("Select title from (Select title, (:ysw * yearlySalary/:base) + (:sbw * signingBonus/:base) + (:ybw * yearlyBonus/:base) + (yearlySalary * retiremnetBenifits * :rbw/:base) + (leaveTime * yearlySalary/260) * (:ltw/:base) as rank from offers order by rank desc)")
+    public String[] readTitle(int ysw, int sbw, int ybw, int rbw, int ltw, int base);
+
+    @Query("Select city from (Select city, (:ysw * yearlySalary/:base) + (:sbw * signingBonus/:base) + (:ybw * yearlyBonus/:base) + (yearlySalary * retiremnetBenifits * :rbw/:base) + (leaveTime * yearlySalary/260) * (:ltw/:base) as rank from offers order by rank desc)")
+    public String[] readCity(int ysw, int sbw, int ybw, int rbw, int ltw, int base);
+
+    @Query("Select count(*) from offers")
+    public int readsize();
+
+
 
     @Query("Select city  from offers where current = 'True'")
     public String readCurrentCity();

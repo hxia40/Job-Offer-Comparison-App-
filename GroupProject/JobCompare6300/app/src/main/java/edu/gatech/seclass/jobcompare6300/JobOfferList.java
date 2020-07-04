@@ -1,9 +1,11 @@
 package edu.gatech.seclass.jobcompare6300;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.ActionMode;
@@ -19,6 +21,9 @@ import android.widget.Toast;
 import java.lang.reflect.GenericArrayType;
 import java.util.ArrayList;
 import java.util.List;
+
+import edu.gatech.seclass.jobcompare6300.database.AppDatabase;
+import edu.gatech.seclass.jobcompare6300.database.DAI;
 
 public class JobOfferList extends AppCompatActivity {
 
@@ -78,9 +83,42 @@ public class JobOfferList extends AppCompatActivity {
     }
 
     private void getJobs() {
+        AppDatabase database = Room.databaseBuilder(this, AppDatabase.class, "offers")
+                .allowMainThreadQueries()
+                .build();
+
+        DAI DAI = database.AppDatabaseObject();
 //        Populate jobs ranked by job score
         // Get the jobs from database (weighted and COL adjusted sorted list)
-        String[] items = {"01 Amazon SDE Seattle", "02 Amazon SDET Seattle", "03 Microsoft SE2 Redmond", "04 Google SE Sunnyvale"};
+        //String[] items = {"01 Amazon SDE Seattle", "02 Amazon SDET Seattle", "03 Microsoft SE2 Redmond", "04 Google SE Sunnyvale"};
+
+
+        // I couldn't access them from the weights class
+        Weights weights = new Weights();
+        SharedPreferences mPreferences = getSharedPreferences(ComparisonSettings.PREFS_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = mPreferences.edit();
+        weights.yearlySalaryWeight = mPreferences.getInt("ysw", 1);
+        weights.signingBonusWeight = mPreferences.getInt("sbw", 1);
+        weights.yearlyBonusWeight = mPreferences.getInt("ybw", 1);
+        weights.retirementBenefitsWeight = mPreferences.getInt("rbw", 1);
+        weights.leaveTimeWeight = mPreferences.getInt("ltw", 1);
+        //
+
+        int sum = weights.yearlySalaryWeight + weights.signingBonusWeight + weights.yearlyBonusWeight + weights.retirementBenefitsWeight + weights.leaveTimeWeight;
+
+        String[] company = DAI.readCompany(weights.yearlySalaryWeight,weights.signingBonusWeight,weights.yearlyBonusWeight,weights.retirementBenefitsWeight,weights.leaveTimeWeight,sum);
+        String[] title = DAI.readTitle(weights.yearlySalaryWeight,weights.signingBonusWeight,weights.yearlyBonusWeight,weights.retirementBenefitsWeight,weights.leaveTimeWeight,sum);
+        String[] city = DAI.readCity(weights.yearlySalaryWeight,weights.signingBonusWeight,weights.yearlyBonusWeight,weights.retirementBenefitsWeight,weights.leaveTimeWeight,sum);
+        int size = DAI.readsize();
+        String[] items = new String[size];
+
+
+        for(int i=0; i < size; i++){
+
+            items[i] = i + " " + company[i] + " " + title[i] + " " + city[i];
+        }
+
+
         for (String item : items) {
             jobs.add(item);
         }

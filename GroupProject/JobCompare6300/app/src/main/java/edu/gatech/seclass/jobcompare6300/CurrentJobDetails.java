@@ -25,7 +25,7 @@ public class CurrentJobDetails extends AppCompatActivity implements View.OnClick
         setContentView(R.layout.activity_current_job_details);
         init();
 
-        /*AppDatabase database = Room.databaseBuilder(this, AppDatabase.class, "offers")
+        AppDatabase database = Room.databaseBuilder(this, AppDatabase.class, "offers")
                 .allowMainThreadQueries()
                 .fallbackToDestructiveMigration()
                 .build();
@@ -60,7 +60,7 @@ public class CurrentJobDetails extends AppCompatActivity implements View.OnClick
 
         System.out.println(DAI.readCurrentcompany());
         //EditText r2 = (EditText)findViewById(R.id);
-        rl.setText(DAI.readCurrentcompany());*/
+        rl.setText(DAI.readCurrentcompany());
         //r2.setText(DAI.readCity());
     }
 
@@ -100,7 +100,7 @@ public class CurrentJobDetails extends AppCompatActivity implements View.OnClick
 
     private void saveCurrentJobDetails() {
         System.out.println("Reached here");
-        /*AppDatabase database = Room.databaseBuilder(this, AppDatabase.class, "offers")
+        AppDatabase database = Room.databaseBuilder(this, AppDatabase.class, "offers")
                 .allowMainThreadQueries()
                 .build();
 
@@ -119,6 +119,6 @@ public class CurrentJobDetails extends AppCompatActivity implements View.OnClick
 
         DAI.addJob(offer);
 
-        System.out.println(DAI.readCurrentcompany());*/
+        System.out.println(DAI.readCurrentcompany());
     }
 }

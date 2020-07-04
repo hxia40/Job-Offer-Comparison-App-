@@ -39,8 +39,8 @@ public class CompareJobOffers extends AppCompatActivity{
 
         EditText rl = (EditText)findViewById(R.id.editText2);
         EditText r2 = (EditText)findViewById(R.id.editText3);
-        rl.setText(DAI.readCompany());
-        r2.setText(DAI.readCity());
+        //rl.setText(DAI.readCompany());
+        //r2.setText(DAI.readCity());
 
 
 

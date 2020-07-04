@@ -85,10 +85,12 @@ public class JobOffers extends AppCompatActivity implements View.OnClickListener
 //        System.out.println(title.getText().toString() + company.getText().toString() + city.getText().toString() + state.getText().toString() + costOfLiving.getText().toString() + yearlySalary.getText().toString() + signingBonus.getText().toString() + yearlyBonus.getText().toString() + retirementBonus.getText().toString() + leaveTime.getText().toString());
         AppDatabase database = Room.databaseBuilder(this, AppDatabase.class, "offers")
                 .allowMainThreadQueries()
+                .fallbackToDestructiveMigration()
                 .build();
 
         DAI DAI = database.AppDatabaseObject();
         JobOffer offer = new JobOffer();
+        offer.settitle(title.getText().toString());
         offer.setCity(city.getText().toString());
         offer.setCompany(company.getText().toString());
         offer.setcostOfLiving((Double.valueOf(costOfLiving.getText().toString())));
@@ -116,6 +118,7 @@ public class JobOffers extends AppCompatActivity implements View.OnClickListener
 
         DAI DAI = database.AppDatabaseObject();
         JobOffer offer = new JobOffer();
+        offer.settitle(title.getText().toString());
         offer.setCity(city.getText().toString());
         offer.setCompany(company.getText().toString());
         offer.setcostOfLiving((Double.valueOf(costOfLiving.getText().toString())));
@@ -128,6 +131,6 @@ public class JobOffers extends AppCompatActivity implements View.OnClickListener
 
         DAI.addJob(offer);
 
-        System.out.println(DAI.readCompany());
+        //System.out.println(DAI.readCompany());
     }
 }
