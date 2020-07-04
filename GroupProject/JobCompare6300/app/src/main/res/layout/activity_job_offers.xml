@@ -30,7 +30,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="565dp"
+            android:layout_height="472dp"
             android:orientation="vertical">
 
             <LinearLayout
@@ -312,10 +312,6 @@
                     android:inputType="textPersonName" />
             </LinearLayout>
             <!--            // hui test-->
-            <TextView
-                android:id="@+id/huiOffer"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
             <!--            // hui test-->
         </LinearLayout>
 
@@ -381,6 +377,11 @@
                 android:textColor="@android:color/white" />
 
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/huiOffer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
     </LinearLayout>
 

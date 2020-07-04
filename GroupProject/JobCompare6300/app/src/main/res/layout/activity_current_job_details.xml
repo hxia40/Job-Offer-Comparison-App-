@@ -30,7 +30,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="565dp"
+            android:layout_height="467dp"
             android:orientation="vertical">
 
             <LinearLayout
@@ -309,6 +309,13 @@
                     android:ems="10"
                     android:inputType="textPersonName" />
             </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="16dp"
+            android:orientation="vertical">
 
         </LinearLayout>
 
