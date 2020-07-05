@@ -8,6 +8,10 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
+
+import edu.gatech.seclass.jobcompare6300.database.AppDatabase;
+import edu.gatech.seclass.jobcompare6300.database.DAI;
 
 public class JobOfferCompare extends AppCompatActivity {
 
@@ -32,6 +36,7 @@ public class JobOfferCompare extends AppCompatActivity {
     private EditText job2_retirement_id;
     private EditText job2_leave_id;
     public String job1, job2;
+    public int job1Id, job2Id;
 
     private String
             job1_title = "SDE",
@@ -88,6 +93,35 @@ public class JobOfferCompare extends AppCompatActivity {
         job2_leave_id = findViewById(R.id.txt_job_offer2_leave_time);
 
         //Populate job1 and job2
+        job1Id = Integer.parseInt(job1);
+        job2Id = Integer.parseInt(job2);
+
+        AppDatabase database = Room.databaseBuilder(this, AppDatabase.class, "offers")
+                .allowMainThreadQueries()
+                .build();
+        DAI DAI = database.AppDatabaseObject();
+
+        job1_title = DAI.getTitleById(job1Id);
+        job1_company = DAI.getCompanyById(job1Id);
+        job1_city = DAI.getCityById(job1Id);
+        job1_state = DAI.getStateById(job1Id);
+        job1_col = Double.toString(DAI.getCOLById(job1Id));
+        job1_salary = Double.toString(DAI.getSalaryById(job1Id));
+        job1_signing = Double.toString(DAI.getSigningById(job1Id));
+        job1_bonus = Double.toString(DAI.getBonusById(job1Id));
+        job1_retirement = Double.toString(DAI.getRetirementById(job1Id));
+        job1_leave = Double.toString(DAI.getLeaveById(job1Id));
+
+        job2_title = DAI.getTitleById(job2Id);
+        job2_company = DAI.getCompanyById(job2Id);
+        job2_city = DAI.getCityById(job2Id);
+        job2_state = DAI.getStateById(job2Id);
+        job2_col = Double.toString(DAI.getCOLById(job2Id));
+        job2_salary = Double.toString(DAI.getSalaryById(job2Id));
+        job2_signing = Double.toString(DAI.getSigningById(job2Id));
+        job2_bonus = Double.toString(DAI.getBonusById(job2Id));
+        job2_retirement = Double.toString(DAI.getRetirementById(job2Id));
+        job2_leave = Double.toString(DAI.getLeaveById(job2Id));
 
         job1_title_id.setText(job1_title);
         job1_company_id.setText(job1_company);
@@ -111,8 +145,6 @@ public class JobOfferCompare extends AppCompatActivity {
         job2_retirement_id.setText(job2_retirement);
         job2_leave_id.setText(job2_leave);
 
-
-
     }
 
     public void onClick(View view) {
@@ -121,12 +153,6 @@ public class JobOfferCompare extends AppCompatActivity {
                 this.finish();
                 break;
             case R.id.btn_home:
-                Context context = getApplicationContext();
-                CharSequence text = job1;
-                int duration = Toast.LENGTH_SHORT;
-                Toast toast = Toast.makeText(context, text, duration);
-                toast.show();
-
                 Intent i = new Intent(getApplicationContext(),MainActivity.class);
                 startActivity(i);
                 break;
