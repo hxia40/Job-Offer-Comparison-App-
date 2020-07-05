@@ -13,7 +13,7 @@
 |11|Edit button not populating the selected Job offer|Sreekumar|Sreekumar|resolved| |
 |12|App crashes when current job selected and database is empty|Sreekumar|Sreekumar|resolved| |
 |13|App crashes when Add job selected and database is empty|Sreekumar|Sreekumar|resolved| |
-|14|The compare function in the "job offers" page does not work|Hui | | | |
+|14|The compare function in the "job offers" page does not work|Hui |Sreekumar|resolved| |
 |15|The current job is not being correctly marked. Instead of marking the current job, the app always mark the "last job" as the current job| Hui|Hui |canceled | this is rather mystery. I cannot reproduce this error anymore. let's fix others first|
 |16|After inputing a new job offer via the "ADD" button and clicking "SAVE", then the Android's "back", the "Job Offers" page does not automatically refresh | Hui|Sreekumar|resolved| |
 |17| the "EDIT" button on the "job offers" page does not work|Hui |Sreekumar|resolved| |
