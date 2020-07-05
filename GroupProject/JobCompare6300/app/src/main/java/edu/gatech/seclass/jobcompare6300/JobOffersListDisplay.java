@@ -80,7 +80,9 @@ public class JobOffersListDisplay extends AppCompatActivity {
 
     private void cancelSelection() {
         selectedJobs.clear();
-        this.finish();
+//        this.finish();
+        Intent i = new Intent(getApplicationContext(),MainActivity.class);
+        startActivity(i);
     }
 
     private void getJobs() {
