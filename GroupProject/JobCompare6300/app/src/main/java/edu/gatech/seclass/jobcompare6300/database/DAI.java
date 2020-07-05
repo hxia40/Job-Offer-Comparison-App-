@@ -130,4 +130,7 @@ public interface DAI {
     @Query("Select count(*) from offers where current = 1")
     public Integer currentJobCount();
 
+    @Query("Select count(*) from offers")
+    public Integer JobCount();
+
 }
