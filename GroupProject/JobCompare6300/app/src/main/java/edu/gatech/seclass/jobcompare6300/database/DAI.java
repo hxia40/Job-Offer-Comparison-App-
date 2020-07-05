@@ -110,8 +110,7 @@ public interface DAI {
     public double getRetirementById(int offerId);
 
     @Query("Select leaveTime from offers where id = :offerId")
-    public double getLeaveofferId);ById(int
-
+    public double getLeaveById(int offerId);
 
     @Update
     public  void updateJob(JobOffer offers);
