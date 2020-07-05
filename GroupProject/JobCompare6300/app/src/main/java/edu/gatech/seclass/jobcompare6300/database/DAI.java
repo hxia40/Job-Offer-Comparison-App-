@@ -34,7 +34,8 @@ public interface DAI {
     @Query("Select count(*) from offers")
     public int readsize();
 
-
+    @Query("Select title  from offers where current = 1")
+    public String readCurrentTitle();
 
     @Query("Select city  from offers where current = 1")
     public String readCurrentCity();

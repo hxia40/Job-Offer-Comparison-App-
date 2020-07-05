@@ -57,13 +57,27 @@ public class CurrentJobDetails extends AppCompatActivity implements View.OnClick
 
         //public Double readCurrentyearlySalary();
         //System.out.println(offers);
-
-        EditText rl = (EditText)findViewById(R.id.txt_current_job_details_title);
-
-        System.out.println(DAI.readCurrentcompany());
-        //EditText r2 = (EditText)findViewById(R.id);
-        rl.setText(DAI.readCurrentcompany());
-        //r2.setText(DAI.readCity());
+        
+        EditText r1 = (EditText)findViewById(R.id.txt_current_job_details_title);
+        r1.setText(DAI.readCurrentTitle());
+        EditText r2 = (EditText)findViewById(R.id.txt_current_job_details_company);
+        r2.setText(DAI.readCurrentcompany());
+        EditText r3 = (EditText)findViewById(R.id.txt_current_job_details_city);
+        r3.setText(DAI.readCurrentCity());
+        EditText r4 = (EditText)findViewById(R.id.txt_current_job_details_state);
+        r4.setText(DAI.readCurrentstate());
+        EditText r5 = (EditText)findViewById(R.id.txt_current_job_details_yearly_salary);
+        r5.setText(DAI.readCurrentyearlySalary().toString());
+        EditText r6 = (EditText)findViewById(R.id.txt_current_job_details_signing_bonus);
+        r6.setText(DAI.readCurrentsigningBonus().toString());
+        EditText r7 = (EditText)findViewById(R.id.txt_current_job_details_yearly_bonus);
+        r7.setText(DAI.readCurrentyearlyBonus().toString());
+        EditText r8 = (EditText)findViewById(R.id.txt_current_job_details_retirement_bonus);
+        r8.setText(DAI.readCurrentretirementBonus().toString());
+        EditText r9 = (EditText)findViewById(R.id.txt_current_job_details_leave_time);
+        r9.setText(DAI.readCurrentleaveTime().toString());
+        EditText r10 = (EditText)findViewById(R.id.txt_current_job_details_costofliving);
+        r10.setText(DAI.readCurrentcostOfLiving().toString());
     }
 
     @Override
