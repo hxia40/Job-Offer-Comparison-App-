@@ -15,6 +15,7 @@ import edu.gatech.seclass.jobcompare6300.database.JobOffer;
 // hui test
 import android.content.SharedPreferences;
 import android.content.Context;
+import android.widget.Toast;
 // hui test
 
 public class JobOffers extends AppCompatActivity implements View.OnClickListener {
@@ -125,7 +126,12 @@ public class JobOffers extends AppCompatActivity implements View.OnClickListener
             offer.setyearlySalary(Double.valueOf(yearlySalary.getText().toString()));
 
             DAI.addJob(offer);
-
+            Context context = getApplicationContext();
+            CharSequence text = "";
+            text = "Job offer for " + title.getText().toString() + "at" + company.getText().toString() + " has been saved!";
+            int duration = Toast.LENGTH_SHORT;
+            Toast toast = Toast.makeText(context, text, duration);
+            toast.show();
             //System.out.println(DAI.readCompany());
         }
     }
