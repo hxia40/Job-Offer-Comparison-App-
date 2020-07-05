@@ -19,6 +19,6 @@
 |17| the "EDIT" button on the "job offers" page does not work|Hui |Sreekumar|resolved| |
 |18| when using a brand new database (you can remove your database by either 'nuking' it, or delete the app from your simulator android phone, the restart the android studio), if you click "current job", the app will crash. This is because the in "currentJobDetails.java, lines 64-83, trys to query the database w/o an current job available. to fix this, we will need to add an empty current job upon the creation of the database. How to recreate the bug: 1. start the app in simulator. 2. uninstall the app in the simulator phone by long-clicking on it and then dragging it to the trash can. 3. select "yes" when the system asks if you want to uninstall the app. 4. restart the android stuido, and run the code. 5. click "CURRENT JOB" button in the main menu. | Hui |Hui | resolved| |
 |19|unable to enter 0 for cost of living|Sreekumar|Sreekumar|resolved| |
-|20|Current job deleted when updated|Richard| |open| |
-|21|Edit Job offer does not update DB|Richard| |open| |
+|20|Current job deleted when updated|Richard| Zeke | resolved | |
+|21|Edit Job offer does not update DB|Richard| Zeke | open | |
 | | | | | | |
