@@ -3,6 +3,7 @@ package edu.gatech.seclass.jobcompare6300;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -63,6 +64,35 @@ public class JobOffers extends AppCompatActivity implements View.OnClickListener
         save.setOnClickListener(this);
         compare.setOnClickListener(this);
         cancel.setOnClickListener(this);
+
+        Intent i = getIntent();
+        int job1Id = Integer.parseInt(i.getStringExtra("Job1"));
+        AppDatabase database = Room.databaseBuilder(this, AppDatabase.class, "offers")
+                .allowMainThreadQueries()
+                .build();
+        DAI DAI = database.AppDatabaseObject();
+
+        if (job1Id > 0) {
+            title.setText(DAI.getTitleById(job1Id));
+            company.setText(DAI.getCompanyById(job1Id));
+            city.setText(DAI.getCityById(job1Id));
+            state.setText(DAI.getStateById(job1Id));
+            costOfLiving.setText(Double.toString(DAI.getCOLById(job1Id)));
+            yearlySalary.setText(Double.toString(DAI.getSalaryById(job1Id)));
+            signingBonus.setText(Double.toString(DAI.getSigningById(job1Id)));
+            yearlyBonus.setText(Double.toString(DAI.getBonusById(job1Id)));
+            retirementBonus.setText(Double.toString(DAI.getRetirementById(job1Id)));
+            leaveTime.setText(Double.toString(DAI.getLeaveById(job1Id)));
+        }
+
+//        // hui test
+//        TextView yearlySalaryWeight = (TextView) findViewById(R.id.huiOffer);
+//        SharedPreferences mPreferences = getSharedPreferences(ComparisonSettings.PREFS_NAME, Context.MODE_PRIVATE);
+//        SharedPreferences.Editor editor = mPreferences.edit();
+//        int yswValue = mPreferences.getInt("ysw", 1);
+//        yearlySalaryWeight.setText(String.valueOf(yswValue));
+//        // hui test
+
     }
 
     private void compareJobOffers() {
