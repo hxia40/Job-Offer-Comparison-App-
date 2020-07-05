@@ -8,7 +8,7 @@
 | 6. | hui has some left over code in JobOffers.java that need to be deleted | HX | Hui | will delete them when we are sure we no longer need to worry about the preferences  | |
 | .7 | Allow users to update thier current job's info  | Zeke | Zeke | resolved | |
 | .8 | Title is not being saved correctly from job offers | Zeke | Zeke | resolved | |
-| | | | | | |
+| .9 | compare job offers (disabled if no job offers were entered yet | Zeke | | ongoing|To be precise, this functionality will be enabled if there are either (1) at least two job offers, in the case there is no current job, or (2) at least one job offer, in the case there is a current job. |
 | | | | | | |
 | | | | | | |
 | | | | | | |
