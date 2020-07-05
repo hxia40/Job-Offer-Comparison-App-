@@ -19,7 +19,7 @@ import android.content.Context;
 
 public class JobOffers extends AppCompatActivity implements View.OnClickListener {
     EditText title, company, city, state, costOfLiving, yearlySalary, signingBonus, yearlyBonus, retirementBonus, leaveTime;
-    Button add, save, compare, cancel;
+    Button save, compare, cancel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,9 +36,6 @@ public class JobOffers extends AppCompatActivity implements View.OnClickListener
                 break;
             case R.id.btn_job_offers_cancel:
                 cancelJobOffers();
-                break;
-            case R.id.btn_job_offers_add:
-                addJobOffers();
                 break;
             case R.id.btn_job_offers_compare:
                 compareJobOffers();
@@ -58,12 +55,11 @@ public class JobOffers extends AppCompatActivity implements View.OnClickListener
         retirementBonus = (EditText)findViewById(R.id.txt_job_offers_retirement_bonus);
         leaveTime = (EditText)findViewById(R.id.txt_job_offers_leave_time);
 
-        add = (Button)findViewById(R.id.btn_job_offers_add);
         save = (Button)findViewById(R.id.btn_job_offers_save);
         compare = (Button)findViewById(R.id.btn_job_offers_compare);
         cancel = (Button)findViewById(R.id.btn_job_offers_cancel);
 
-        add.setOnClickListener(this);
+//        add.setOnClickListener(this);
         save.setOnClickListener(this);
         compare.setOnClickListener(this);
         cancel.setOnClickListener(this);

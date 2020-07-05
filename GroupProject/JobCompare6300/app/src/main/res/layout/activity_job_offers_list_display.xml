@@ -18,12 +18,19 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/btn_compare_display"
+                android:id="@+id/btn_add_display"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="onClick"
-                android:text="Compare" />
+                android:onClick="JobOffers"
+                android:text="Add" />
+
+            <Button
+                android:id="@+id/btn_edit_display"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Edit" />
 
             <Button
                 android:id="@+id/btn_cancel_display"

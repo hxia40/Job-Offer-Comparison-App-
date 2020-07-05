@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.ActionMode;
@@ -39,9 +40,14 @@ public class JobOffersListDisplay extends AppCompatActivity {
         selectedJobs.clear();
     }
 
+    public void JobOffers(View view){
+        Intent i = new Intent(getApplicationContext(),JobOffers.class);
+        startActivity(i);
+    }
+
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.btn_compare_display:
+            case R.id.btn_add_display:
 //                compareJobs();
                 break;
             case R.id.btn_cancel_display:
