@@ -148,6 +148,14 @@
                 android:text="Save" />
         </LinearLayout>
 
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -162,5 +170,17 @@
                 android:text="Reset" />
         </LinearLayout>
 
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="MainActivity"
+            android:text="Home" />
+
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"></LinearLayout>
 </RelativeLayout>
