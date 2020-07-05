@@ -63,6 +63,21 @@ public interface DAI {
     @Query("Select yearlySalary  from offers where current = 1")
     public Double readCurrentyearlySalary();
 
+    @Query("Select max(id) from offers")
+    public int getMaxId();
+
+    @Query("Select id from (Select id, (:ysw * yearlySalary/:base) + (:sbw * signingBonus/:base) + (:ybw * yearlyBonus/:base) + (yearlySalary * retiremnetBenifits * :rbw/:base) + (leaveTime * yearlySalary/260) * (:ltw/:base) as rank from offers order by rank desc)")
+    public String[] readOffer(int ysw, int sbw, int ybw, int rbw, int ltw, int base);
+
+    @Query("Select company from offers where id = :offerId")
+    public String getCompanyById(int offerId);
+
+    @Query("Select title from offers where id = :offerId")
+    public String getTitleById(int offerId);
+
+    @Query("Select city from offers where id = :offerId")
+    public String getCityById(int offerId);
+    
     @Update
     public  void updateJob(JobOffer offers);
 
