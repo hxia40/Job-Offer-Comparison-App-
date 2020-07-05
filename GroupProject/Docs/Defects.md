@@ -17,7 +17,7 @@
 |15|The current job is not being correctly marked. Instead of marking the current job, the app always mark the "last job" as the current job| Hui|Hui |canceled | this is rather mystery. I cannot reproduce this error anymore. let's fix others first|
 |16|After inputing a new job offer via the "ADD" button and clicking "SAVE", then the Android's "back", the "Job Offers" page does not automatically refresh | Hui| | | |
 |17| the "EDIT" button on the "job offers" page does not work|Hui | | | |
-|18| when using a brand new database (you can remove your database by either 'nuking' it, or delete the app from your simulator android phone, the restart the android studio), if you click "current job", the app will crash. This is because the in "currentJobDetails.java, lines 64-83, trys to query the database w/ an current job available. to fix this, we will need to add an empty current job upon the creation of the database. | Hui | | | |
+|18| when using a brand new database (you can remove your database by either 'nuking' it, or delete the app from your simulator android phone, the restart the android studio), if you click "current job", the app will crash. This is because the in "currentJobDetails.java, lines 64-83, trys to query the database w/o an current job available. to fix this, we will need to add an empty current job upon the creation of the database. | Hui | | | |
 |19| | | | | |
 |20| | | | | |
 | | | | | | |
