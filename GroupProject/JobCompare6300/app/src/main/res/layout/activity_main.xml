@@ -35,7 +35,7 @@
             android:id="@+id/btn_joboffers"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="JobOffers"
+            android:onClick="JobOffersListDisplay"
             android:text="Job Offers" />
 
         <Button

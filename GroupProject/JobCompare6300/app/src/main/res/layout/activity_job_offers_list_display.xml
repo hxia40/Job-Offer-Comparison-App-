@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".JobOfferList">
+    tools:context=".JobOffersListDisplay">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,15 +18,23 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/btn_compare"
+                android:id="@+id/btn_add_display"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="JobOffers"
+                android:text="Add" />
+
+            <Button
+                android:id="@+id/btn_edit_display"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:onClick="onClick"
-                android:text="Compare" />
+                android:text="Edit" />
 
             <Button
-                android:id="@+id/btn_cancel"
+                android:id="@+id/btn_cancel_display"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -52,14 +60,14 @@
                     tools:layout_editor_absoluteY="1dp">
 
                     <TextView
-                        android:id="@+id/txt_joboffers"
+                        android:id="@+id/txt_joboffers_display"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Job Offers"
                         android:textAlignment="center" />
 
                     <ListView
-                        android:id="@+id/jobsListView"
+                        android:id="@+id/jobsListView_display"
                         android:layout_width="match_parent"
                         android:layout_height="532dp"
                         android:text="CheckedTextView" />

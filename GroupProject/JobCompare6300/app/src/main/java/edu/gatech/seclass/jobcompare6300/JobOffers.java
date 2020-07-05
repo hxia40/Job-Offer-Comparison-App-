@@ -15,11 +15,12 @@ import edu.gatech.seclass.jobcompare6300.database.JobOffer;
 // hui test
 import android.content.SharedPreferences;
 import android.content.Context;
+import android.widget.Toast;
 // hui test
 
 public class JobOffers extends AppCompatActivity implements View.OnClickListener {
     EditText title, company, city, state, costOfLiving, yearlySalary, signingBonus, yearlyBonus, retirementBonus, leaveTime;
-    Button add, save, compare, cancel;
+    Button save, compare, cancel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,9 +37,6 @@ public class JobOffers extends AppCompatActivity implements View.OnClickListener
                 break;
             case R.id.btn_job_offers_cancel:
                 cancelJobOffers();
-                break;
-            case R.id.btn_job_offers_add:
-                addJobOffers();
                 break;
             case R.id.btn_job_offers_compare:
                 compareJobOffers();
@@ -58,12 +56,11 @@ public class JobOffers extends AppCompatActivity implements View.OnClickListener
         retirementBonus = (EditText)findViewById(R.id.txt_job_offers_retirement_bonus);
         leaveTime = (EditText)findViewById(R.id.txt_job_offers_leave_time);
 
-        add = (Button)findViewById(R.id.btn_job_offers_add);
         save = (Button)findViewById(R.id.btn_job_offers_save);
         compare = (Button)findViewById(R.id.btn_job_offers_compare);
         cancel = (Button)findViewById(R.id.btn_job_offers_cancel);
 
-        add.setOnClickListener(this);
+//        add.setOnClickListener(this);
         save.setOnClickListener(this);
         compare.setOnClickListener(this);
         cancel.setOnClickListener(this);
@@ -105,7 +102,7 @@ public class JobOffers extends AppCompatActivity implements View.OnClickListener
     }
 
     private void cancelJobOffers() {
-//        System.out.println(title.getText().toString() + company.getText().toString() + city.getText().toString() + state.getText().toString() + costOfLiving.getText().toString() + yearlySalary.getText().toString() + signingBonus.getText().toString() + yearlyBonus.getText().toString() + retirementBonus.getText().toString() + leaveTime.getText().toString());
+        finish();
     }
 
     private void saveJobOffers() {
@@ -129,7 +126,12 @@ public class JobOffers extends AppCompatActivity implements View.OnClickListener
             offer.setyearlySalary(Double.valueOf(yearlySalary.getText().toString()));
 
             DAI.addJob(offer);
-
+            Context context = getApplicationContext();
+            CharSequence text = "";
+            text = "Job offer for " + title.getText().toString() + " at " + company.getText().toString() + " has been saved!";
+            int duration = Toast.LENGTH_SHORT;
+            Toast toast = Toast.makeText(context, text, duration);
+            toast.show();
             //System.out.println(DAI.readCompany());
         }
     }
