@@ -171,6 +171,7 @@ public class JobOffers extends AppCompatActivity implements View.OnClickListener
             Toast toast = Toast.makeText(context, text, duration);
             toast.show();
             //System.out.println(DAI.readCompany());
+            finish();
         }
     }
     
