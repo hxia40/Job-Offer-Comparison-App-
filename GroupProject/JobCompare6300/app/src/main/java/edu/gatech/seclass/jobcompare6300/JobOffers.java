@@ -137,7 +137,9 @@ public class JobOffers extends AppCompatActivity implements View.OnClickListener
     }
 
     private void cancelJobOffers() {
-        finish();
+//        finish();
+        Intent i = new Intent(getApplicationContext(),JobOfferList.class);
+        startActivity(i);
     }
 
     private void saveJobOffers() {
