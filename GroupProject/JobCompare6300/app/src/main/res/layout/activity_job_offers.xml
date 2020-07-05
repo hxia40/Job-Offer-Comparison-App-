@@ -336,9 +336,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="#03A9F4"
-                android:text="@string/btn_save"
-                android:textColor="@android:color/white" />
+                android:text="@string/btn_save" />
 
             <Space
                 android:layout_width="wrap_content"
@@ -350,9 +348,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="#03A9F4"
-                android:text="@string/btn_compare"
-                android:textColor="@android:color/white" />
+                android:text="@string/btn_compare" />
 
             <Space
                 android:layout_width="wrap_content"
@@ -364,9 +360,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="#03A9F4"
-                android:text="@string/btn_cancel"
-                android:textColor="@android:color/white" />
+                android:text="@string/btn_cancel" />
 
             <Space
                 android:layout_width="wrap_content"
