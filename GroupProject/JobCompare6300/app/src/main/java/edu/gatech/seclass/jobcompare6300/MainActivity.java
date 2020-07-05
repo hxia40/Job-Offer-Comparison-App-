@@ -39,4 +39,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(i);
     }
 
+    public void JobOffersListDisplay(View view){
+        Intent i = new Intent(getApplicationContext(),JobOffersListDisplay.class);
+        startActivity(i);
+    }
+
  }
