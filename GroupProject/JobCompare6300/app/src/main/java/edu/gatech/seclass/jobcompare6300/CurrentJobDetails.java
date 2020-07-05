@@ -6,6 +6,7 @@ import androidx.room.Room;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -35,11 +36,11 @@ public class CurrentJobDetails extends AppCompatActivity implements View.OnClick
 
         DAI DAI = database.AppDatabaseObject();
 
-//        int currentJobId = DAI.getCurrentJobId();
 
-        String readCurrentCity = DAI.readCurrentCity();
 
-        String readCurrentcompany = DAI.readCurrentcompany();
+//        String readCurrentCity = DAI.readCurrentCity();
+//
+//        String readCurrentcompany = DAI.readCurrentcompany();
 
 
         //public Double readCurrentcostOfLiving();
@@ -62,26 +63,43 @@ public class CurrentJobDetails extends AppCompatActivity implements View.OnClick
         //System.out.println(offers);
 
         EditText r1 = (EditText)findViewById(R.id.txt_current_job_details_title);
-        r1.setText(DAI.readCurrentTitle());
+//        r1.setText(DAI.readCurrentTitle());
         EditText r2 = (EditText)findViewById(R.id.txt_current_job_details_company);
-        r2.setText(DAI.readCurrentcompany());
+//        r2.setText(DAI.readCurrentcompany());
         EditText r3 = (EditText)findViewById(R.id.txt_current_job_details_city);
-        r3.setText(DAI.readCurrentCity());
+//        r3.setText(DAI.readCurrentCity());
         EditText r4 = (EditText)findViewById(R.id.txt_current_job_details_state);
-        r4.setText(DAI.readCurrentstate());
+//        r4.setText(DAI.readCurrentstate());
         EditText r5 = (EditText)findViewById(R.id.txt_current_job_details_yearly_salary);
-        r5.setText(DAI.readCurrentyearlySalary().toString());
+//        r5.setText(DAI.readCurrentyearlySalary().toString());
         EditText r6 = (EditText)findViewById(R.id.txt_current_job_details_signing_bonus);
-        r6.setText(DAI.readCurrentsigningBonus().toString());
+//        r6.setText(DAI.readCurrentsigningBonus().toString());
         EditText r7 = (EditText)findViewById(R.id.txt_current_job_details_yearly_bonus);
-        r7.setText(DAI.readCurrentyearlyBonus().toString());
+//        r7.setText(DAI.readCurrentyearlyBonus().toString());
         EditText r8 = (EditText)findViewById(R.id.txt_current_job_details_retirement_bonus);
-        r8.setText(DAI.readCurrentretirementBonus().toString());
+//        r8.setText(DAI.readCurrentretirementBonus().toString());
         EditText r9 = (EditText)findViewById(R.id.txt_current_job_details_leave_time);
-        r9.setText(DAI.readCurrentleaveTime().toString());
+//        r9.setText(DAI.readCurrentleaveTime().toString());
         EditText r10 = (EditText)findViewById(R.id.txt_current_job_details_costofliving);
-        r10.setText(DAI.readCurrentcostOfLiving().toString());
+//        r10.setText(DAI.readCurrentcostOfLiving().toString());
+
+        int job1Id = DAI.getCurrentJobId();
+        if (job1Id > 0) {
+            r1.setText(DAI.getTitleById(job1Id));
+            r2.setText(DAI.getCompanyById(job1Id));
+            r3.setText(DAI.getCityById(job1Id));
+            r4.setText(DAI.getStateById(job1Id));
+            r10.setText(Double.toString(DAI.getCOLById(job1Id)));
+            r5.setText(Double.toString(DAI.getSalaryById(job1Id)));
+            r6.setText(Double.toString(DAI.getSigningById(job1Id)));
+            r7.setText(Double.toString(DAI.getBonusById(job1Id)));
+            r8.setText(Double.toString(DAI.getRetirementById(job1Id)));
+            r9.setText(Double.toString(DAI.getLeaveById(job1Id)));
+
+        }
     }
+
+
 
     @Override
     public void onClick(View v) {
@@ -120,7 +138,6 @@ public class CurrentJobDetails extends AppCompatActivity implements View.OnClick
 
     private void saveCurrentJobDetails() {
         System.out.println("Reached here");
-
         if(!validateMandatoryFields()) {
             AppDatabase database = Room.databaseBuilder(this, AppDatabase.class, "offers")
                     .allowMainThreadQueries()
@@ -199,4 +216,16 @@ public class CurrentJobDetails extends AppCompatActivity implements View.OnClick
         }
         return isError;
     }
+
+    public double getCostOfLiving(String city, String state){
+        double col = 0;
+        if (city == "Seattle" && state == "WA"){
+            col = 205;
+        }
+        else{
+            col = 220;
+        }
+        return col;
+    }
+
 }

@@ -82,6 +82,9 @@ public interface DAI {
     @Query("Select id from (Select id, (:ysw * yearlySalary/:base) + (:sbw * signingBonus/:base) + (:ybw * yearlyBonus/:base) + (yearlySalary * retiremnetBenifits * :rbw/:base) + (leaveTime * yearlySalary/260) * (:ltw/:base) as rank from offers order by rank desc)")
     public int[] readOffer(int ysw, int sbw, int ybw, int rbw, int ltw, int base);
 
+    @Query("select id from offers where current = 0")
+    public int[] getOffers();
+
     @Query("Select company from offers where id = :offerId")
     public String getCompanyById(int offerId);
 

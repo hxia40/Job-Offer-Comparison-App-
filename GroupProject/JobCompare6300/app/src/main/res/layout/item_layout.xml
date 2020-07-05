@@ -9,7 +9,7 @@
         android:gravity="center"
         android:text="Test"
         android:id="@+id/job"
-        android:textSize="18sp"
+        android:textSize="14sp"
         android:textStyle="normal"
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="25dp"

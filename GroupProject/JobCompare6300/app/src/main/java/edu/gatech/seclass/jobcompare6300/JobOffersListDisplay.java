@@ -43,6 +43,7 @@ public class JobOffersListDisplay extends AppCompatActivity {
 
     public void JobOffers(View view){
         Intent i = new Intent(getApplicationContext(),JobOffers.class);
+        i.putExtra("Job1", "0");
         startActivity(i);
     }
 
@@ -71,7 +72,8 @@ public class JobOffersListDisplay extends AppCompatActivity {
         toast.show();
         if (selectedJobs.size() == 1) {
             Intent i = new Intent(getApplicationContext(), JobOffers.class);
-            i.putExtra("Job1", selectedJobs.get(0));
+            String[] selJobs = selectedJobs.get(0).split(" ");
+            i.putExtra("Job1", selJobs[0]);
             startActivity(i);
         }
     }
@@ -103,19 +105,24 @@ public class JobOffersListDisplay extends AppCompatActivity {
         weights.leaveTimeWeight = mPreferences.getInt("ltw", 1);
         //
 
-        int sum = weights.yearlySalaryWeight + weights.signingBonusWeight + weights.yearlyBonusWeight + weights.retirementBenefitsWeight + weights.leaveTimeWeight;
 
+        int sum = weights.yearlySalaryWeight + weights.signingBonusWeight + weights.yearlyBonusWeight + weights.retirementBenefitsWeight + weights.leaveTimeWeight;
         String[] company = DAI.readCompany(weights.yearlySalaryWeight,weights.signingBonusWeight,weights.yearlyBonusWeight,weights.retirementBenefitsWeight,weights.leaveTimeWeight,sum);
         String[] title = DAI.readTitle(weights.yearlySalaryWeight,weights.signingBonusWeight,weights.yearlyBonusWeight,weights.retirementBenefitsWeight,weights.leaveTimeWeight,sum);
         String[] city = DAI.readCity(weights.yearlySalaryWeight,weights.signingBonusWeight,weights.yearlyBonusWeight,weights.retirementBenefitsWeight,weights.leaveTimeWeight,sum);
         int size = DAI.readsize();
         String[] items = new String[size];
 
+        int[] jobOffers = DAI.readOffer(weights.yearlySalaryWeight,weights.signingBonusWeight,weights.yearlyBonusWeight,weights.retirementBenefitsWeight,weights.leaveTimeWeight,sum);
 
-        for(int i=0; i < size; i++){
-
-            items[i] = i + " " + company[i] + " " + title[i] + " " + city[i];
+        for (int i=0; i< size; i++) {
+            items[i] = jobOffers[i] + " " + DAI.getTitleById(jobOffers[i]) + " " + DAI.getCompanyById(jobOffers[i]) + " " + DAI.getCityById(jobOffers[i]);
         }
+
+//        for(int i=0; i < size; i++){
+//
+//            items[i] = i + " " + company[i] + " " + title[i] + " " + city[i];
+//        }
 
 
         for (String item : items) {

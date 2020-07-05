@@ -42,15 +42,15 @@ public class JobOffersListViewAdapter extends ArrayAdapter<String> {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 int position = (int)buttonView.getTag();
 
-                if (JobOfferList.selectedJobs.contains(jobs.get(position))) {
-                    JobOfferList.selectedJobs.remove(jobs.get(position));
+                if (JobOffersListDisplay.selectedJobs.contains(jobs.get(position))) {
+                    JobOffersListDisplay.selectedJobs.remove(jobs.get(position));
                 }
                 else {
-                    if (JobOfferList.selectedJobs.size() > 1) {
+                    if (JobOffersListDisplay.selectedJobs.size() > 1) {
                         checkBox.setChecked(false);
                     }
                     else {
-                        JobOfferList.selectedJobs.add(jobs.get(position));
+                        JobOffersListDisplay.selectedJobs.add(jobs.get(position));
                     }
                 }
             }
