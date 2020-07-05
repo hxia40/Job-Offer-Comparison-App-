@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AbsListView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +23,7 @@ import edu.gatech.seclass.jobcompare6300.database.DAI;
 
 public class JobOffersListDisplay extends AppCompatActivity {
     private ListView listView;
-    private ListViewAdapter adapter;
+    private JobOffersListViewAdapter adapter;
     private List<String> jobs = new ArrayList<>();
     public static List<String> selectedJobs = new ArrayList<>();
     public static boolean isActionMode = false;
@@ -35,7 +36,7 @@ public class JobOffersListDisplay extends AppCompatActivity {
         listView = findViewById(R.id.jobsListView_display);
         listView.setChoiceMode(AbsListView.CHOICE_MODE_MULTIPLE_MODAL);
         listView.setMultiChoiceModeListener(modeListener);
-        adapter = new ListViewAdapter(jobs, this);
+        adapter = new JobOffersListViewAdapter(jobs, this);
         listView.setAdapter(adapter);
         selectedJobs.clear();
     }
@@ -47,13 +48,37 @@ public class JobOffersListDisplay extends AppCompatActivity {
 
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.btn_add_display:
-//                compareJobs();
+            case R.id.btn_edit_display:
+                editJob();
                 break;
             case R.id.btn_cancel_display:
-//                cancelSelection();
+                cancelSelection();
                 break;
         }
+    }
+
+    private void editJob(){
+        Context context = getApplicationContext();
+        CharSequence text = "";
+        if (selectedJobs.size() == 1) {
+            text = "Jobs selected: " + selectedJobs.get(0) ;
+        }
+        else {
+            text = "Select exactly 1 job offers for edit";
+        }
+        int duration = Toast.LENGTH_SHORT;
+        Toast toast = Toast.makeText(context, text, duration);
+        toast.show();
+        if (selectedJobs.size() == 1) {
+            Intent i = new Intent(getApplicationContext(), JobOffers.class);
+            i.putExtra("Job1", selectedJobs.get(0));
+            startActivity(i);
+        }
+    }
+
+    private void cancelSelection() {
+        selectedJobs.clear();
+        this.finish();
     }
 
     private void getJobs() {
