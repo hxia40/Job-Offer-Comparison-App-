@@ -12,7 +12,7 @@
 |10|Selection not working correctly from Job Offers page|Pankaj|Sreekumar|resolved| |
 |11|Edit button not populating the selected Job offer|Sreekumar|Sreekumar|resolved| |
 |12|App crashes when current job selected and database is empty|Sreekumar|Sreekumar|resolved| |
-| | | | | | |
+|13|App crashes when Add job selected and database is empty|Sreekumar|Sreekumar|resolved| |
 | | | | | | |
 | | | | | | |
 | | | | | | |
