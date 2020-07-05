@@ -94,7 +94,7 @@ public class CurrentJobDetails extends AppCompatActivity implements View.OnClick
             r6.setText(Double.toString(DAI.getSigningById(job1Id)));
             r7.setText(Double.toString(DAI.getBonusById(job1Id)));
             r8.setText(Double.toString(DAI.getRetirementById(job1Id)));
-            r9.setText(Double.toString(DAI.getLeaveById(job1Id)));
+            r9.setText(Integer.toString(DAI.getLeaveById(job1Id)));
 
         }
     }
@@ -144,22 +144,26 @@ public class CurrentJobDetails extends AppCompatActivity implements View.OnClick
                     .build();
 
             DAI DAI = database.AppDatabaseObject();
-            DAI.DeleteCurrent();
-            JobOffer offer = new JobOffer();
-            offer.settitle(title.getText().toString());
-            offer.setCity(city.getText().toString());
-            offer.setCompany(company.getText().toString());
-            offer.setcostOfLiving((Double.valueOf(costOfLiving.getText().toString())));
-            offer.setleaveTime(Integer.valueOf(leaveTime.getText().toString()));
-            offer.setretiremnetBenifits(Float.valueOf(retirementBonus.getText().toString()));
-            offer.setsigningBonus(Double.valueOf(signingBonus.getText().toString()));
-            offer.setstate(state.getText().toString());
-            offer.setyearlyBonus(Double.valueOf(yearlyBonus.getText().toString()));
-            offer.setyearlySalary(Double.valueOf(yearlySalary.getText().toString()));
-            offer.setcurrent(1);
+            //DAI.DeleteCurrent();
+            if(DAI.currentJobCount() == 0) {
+                JobOffer offer = new JobOffer();
+                offer.settitle(title.getText().toString());
+                offer.setCity(city.getText().toString());
+                offer.setCompany(company.getText().toString());
+                offer.setcostOfLiving((Double.valueOf(costOfLiving.getText().toString())));
+                offer.setleaveTime(Integer.valueOf(leaveTime.getText().toString()));
+                offer.setretiremnetBenifits(Float.valueOf(retirementBonus.getText().toString()));
+                offer.setsigningBonus(Double.valueOf(signingBonus.getText().toString()));
+                offer.setstate(state.getText().toString());
+                offer.setyearlyBonus(Double.valueOf(yearlyBonus.getText().toString()));
+                offer.setyearlySalary(Double.valueOf(yearlySalary.getText().toString()));
+                offer.setcurrent(1);
 
-            DAI.addJob(offer);
-
+                DAI.addJob(offer);
+            }
+            else {
+                DAI.updateCurrentJob(title.getText().toString(), city.getText().toString(), company.getText().toString(), Double.valueOf(costOfLiving.getText().toString()), Integer.valueOf(leaveTime.getText().toString()), Float.valueOf(retirementBonus.getText().toString()), Double.valueOf(signingBonus.getText().toString()), state.getText().toString(), Double.valueOf(yearlyBonus.getText().toString()), Double.valueOf(yearlySalary.getText().toString()));
+            }
             System.out.println(DAI.readCurrentcompany());
 
             Context context = getApplicationContext();

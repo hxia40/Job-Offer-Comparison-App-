@@ -113,11 +113,21 @@ public interface DAI {
     public double getRetirementById(int offerId);
 
     @Query("Select leaveTime from offers where id = :offerId")
-    public double getLeaveById(int offerId);
+    public Integer getLeaveById(int offerId);
 
     @Update
     public  void updateJob(JobOffer offers);
 
     @Delete
     public void deleteJob(JobOffer offers);
+
+
+    @Query("UPDATE offers SET title = :title, city = :city, company = :company, costOfLiving = :costOfLiving, leaveTime = :leaveTime, retiremnetBenifits = :retirementBonus, signingBonus = :signingBonus, state = :state, yearlyBonus = :yearlyBonus, yearlySalary = :yearlySalary  WHERE current = 1")
+    public void updateCurrentJob(String title, String city, String company, Double costOfLiving, int leaveTime, float retirementBonus, double signingBonus, String state, double yearlyBonus, double yearlySalary);
+
+
+
+    @Query("Select count(*) from offers where current = 1")
+    public Integer currentJobCount();
+
 }
