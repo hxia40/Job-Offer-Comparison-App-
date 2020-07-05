@@ -172,7 +172,7 @@ public class JobOffers extends AppCompatActivity implements View.OnClickListener
             toast.show();
             //System.out.println(DAI.readCompany());
 //            finish();
-            Intent i = new Intent(getApplicationContext(),JobOfferList.class);
+            Intent i = new Intent(getApplicationContext(),JobOffersListDisplay.class);
             startActivity(i);
         }
     }
