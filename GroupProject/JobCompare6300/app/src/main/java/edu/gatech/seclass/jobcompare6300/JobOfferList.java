@@ -109,13 +109,14 @@ public class JobOfferList extends AppCompatActivity {
         String[] company = DAI.readCompany(weights.yearlySalaryWeight,weights.signingBonusWeight,weights.yearlyBonusWeight,weights.retirementBenefitsWeight,weights.leaveTimeWeight,sum);
         String[] title = DAI.readTitle(weights.yearlySalaryWeight,weights.signingBonusWeight,weights.yearlyBonusWeight,weights.retirementBenefitsWeight,weights.leaveTimeWeight,sum);
         String[] city = DAI.readCity(weights.yearlySalaryWeight,weights.signingBonusWeight,weights.yearlyBonusWeight,weights.retirementBenefitsWeight,weights.leaveTimeWeight,sum);
+        String[] current = DAI.readCurrentInd();
         int size = DAI.readsize();
         String[] items = new String[size];
 
 
         for(int i=0; i < size; i++){
 
-            items[i] = i + " " + company[i] + " " + title[i] + " " + city[i];
+            items[i] = i + " " + company[i] + " " + title[i] + " " + city[i] + " " + current[i];
         }
 
 

@@ -115,6 +115,7 @@ public class JobOffers extends AppCompatActivity implements View.OnClickListener
 
             DAI DAI = database.AppDatabaseObject();
             JobOffer offer = new JobOffer();
+            offer.settitle(title.getText().toString());
             offer.setCity(city.getText().toString());
             offer.setCompany(company.getText().toString());
             offer.setcostOfLiving((Double.valueOf(costOfLiving.getText().toString())));

@@ -34,7 +34,8 @@ public interface DAI {
     @Query("Select count(*) from offers")
     public int readsize();
 
-
+    @Query("Select title  from offers where current = 1")
+    public String readCurrentTitle();
 
     @Query("Select city  from offers where current = 1")
     public String readCurrentCity();
@@ -51,6 +52,9 @@ public interface DAI {
     @Query("Select retiremnetBenifits  from offers where current = 1")
     public Float readCurrentretirementBonus();
 
+    @Query("Select CASE current WHEN 1 THEN '(Current Job)' ELSE '' END  from offers")
+    public String[] readCurrentInd();
+
     @Query("Select signingBonus  from offers where current = 1")
     public Double readCurrentsigningBonus();
 
@@ -63,6 +67,12 @@ public interface DAI {
     @Query("Select yearlySalary  from offers where current = 1")
     public Double readCurrentyearlySalary();
 
+    @Query("Delete from offers where current = 1")
+    public void DeleteCurrent();
+
+    @Query("Delete from offers")
+    public void Nuke();
+    
     @Query("Select max(id) from offers")
     public int getMaxId();
 
@@ -100,7 +110,8 @@ public interface DAI {
     public double getRetirementById(int offerId);
 
     @Query("Select leaveTime from offers where id = :offerId")
-    public double getLeaveById(int offerId);
+    public double getLeaveofferId);ById(int
+
 
     @Update
     public  void updateJob(JobOffer offers);
