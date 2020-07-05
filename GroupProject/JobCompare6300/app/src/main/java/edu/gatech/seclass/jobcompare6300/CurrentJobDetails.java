@@ -4,10 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Query;
 import androidx.room.Room;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -123,6 +125,13 @@ public class CurrentJobDetails extends AppCompatActivity implements View.OnClick
             DAI.addJob(offer);
 
             System.out.println(DAI.readCurrentcompany());
+
+            Context context = getApplicationContext();
+            CharSequence text = "";
+            text = "Current job " + title.getText().toString() + " at " + company.getText().toString() + " has been saved!";
+            int duration = Toast.LENGTH_SHORT;
+            Toast toast = Toast.makeText(context, text, duration);
+            toast.show();
         }
     }
 

@@ -128,7 +128,7 @@ public class JobOffers extends AppCompatActivity implements View.OnClickListener
             DAI.addJob(offer);
             Context context = getApplicationContext();
             CharSequence text = "";
-            text = "Job offer for " + title.getText().toString() + "at" + company.getText().toString() + " has been saved!";
+            text = "Job offer for " + title.getText().toString() + " at " + company.getText().toString() + " has been saved!";
             int duration = Toast.LENGTH_SHORT;
             Toast toast = Toast.makeText(context, text, duration);
             toast.show();
