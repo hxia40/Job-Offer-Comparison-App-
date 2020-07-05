@@ -6,7 +6,7 @@
 | 4. | in "job offers" page, the "cost of living index" blank can still be inputed. Is this design by purpose? I thought we want to calculate the cost of living index by the database.| HX | | ongoing | 
 | 5. | lack message when new job saved| |Sreekumar |fixed | |
 | 6. | hui has some left over code in JobOffers.java that need to be deleted | HX | Hui | will delete them when we are sure we no longer need to worry about the preferences  | |
-| .7 | Allow users to update thier current job's info  | Zeke | Zeke | ongoing | |
+| .7 | Allow users to update thier current job's info  | Zeke | Zeke | resolved | |
 | .8 | Title is not being saved correctly from job offers | Zeke | Zeke | ongoing | |
 | | | | | | |
 | | | | | | |
