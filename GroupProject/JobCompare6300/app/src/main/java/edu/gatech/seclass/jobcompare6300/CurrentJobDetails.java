@@ -35,6 +35,8 @@ public class CurrentJobDetails extends AppCompatActivity implements View.OnClick
 
         DAI DAI = database.AppDatabaseObject();
 
+//        int currentJobId = DAI.getCurrentJobId();
+
         String readCurrentCity = DAI.readCurrentCity();
 
         String readCurrentcompany = DAI.readCurrentcompany();

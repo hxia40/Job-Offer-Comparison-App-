@@ -93,8 +93,11 @@ public class JobOfferCompare extends AppCompatActivity {
         job2_leave_id = findViewById(R.id.txt_job_offer2_leave_time);
 
         //Populate job1 and job2
-        job1Id = Integer.parseInt(job1);
-        job2Id = Integer.parseInt(job2);
+//        job1Id = Integer.parseInt(job1);
+//        job2Id = Integer.parseInt(job2);
+
+        job1Id = 1;
+        job2Id = 2;
 
         AppDatabase database = Room.databaseBuilder(this, AppDatabase.class, "offers")
                 .allowMainThreadQueries()
