@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.Date;
 import java.util.List;
 
 import edu.gatech.seclass.jobcompare6300.database.AppDatabase;
@@ -110,7 +111,9 @@ public class CurrentJobDetails extends AppCompatActivity implements View.OnClick
                     .build();
 
             DAI DAI = database.AppDatabaseObject();
+            DAI.DeleteCurrent();
             JobOffer offer = new JobOffer();
+            offer.settitle(title.getText().toString());
             offer.setCity(city.getText().toString());
             offer.setCompany(company.getText().toString());
             offer.setcostOfLiving((Double.valueOf(costOfLiving.getText().toString())));

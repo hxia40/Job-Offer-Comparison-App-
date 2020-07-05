@@ -51,6 +51,9 @@ public interface DAI {
     @Query("Select retiremnetBenifits  from offers where current = 1")
     public Float readCurrentretirementBonus();
 
+    @Query("Select CASE current WHEN 1 THEN '(Current Job)' ELSE '' END  from offers")
+    public String[] readCurrentInd();
+
     @Query("Select signingBonus  from offers where current = 1")
     public Double readCurrentsigningBonus();
 
@@ -62,6 +65,12 @@ public interface DAI {
 
     @Query("Select yearlySalary  from offers where current = 1")
     public Double readCurrentyearlySalary();
+
+    @Query("Delete from offers where current = 1")
+    public void DeleteCurrent();
+
+    @Query("Delete from offers")
+    public void Nuke();
 
     @Update
     public  void updateJob(JobOffer offers);
