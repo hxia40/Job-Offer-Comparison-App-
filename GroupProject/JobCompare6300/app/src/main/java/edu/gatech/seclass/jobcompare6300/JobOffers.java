@@ -21,7 +21,7 @@ import android.widget.Toast;
 public class JobOffers extends AppCompatActivity implements View.OnClickListener {
     EditText title, company, city, state, costOfLiving, yearlySalary, signingBonus, yearlyBonus, retirementBonus, leaveTime;
     Button save, compare, cancel;
-
+    public int job1Id, job2Id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,7 +66,7 @@ public class JobOffers extends AppCompatActivity implements View.OnClickListener
         cancel.setOnClickListener(this);
 
         Intent i = getIntent();
-        int job1Id = Integer.parseInt(i.getStringExtra("Job1"));
+        job1Id = Integer.parseInt(i.getStringExtra("Job1"));
         AppDatabase database = Room.databaseBuilder(this, AppDatabase.class, "offers")
                 .allowMainThreadQueries()
                 .build();
@@ -97,7 +97,20 @@ public class JobOffers extends AppCompatActivity implements View.OnClickListener
 
     private void compareJobOffers() {
 //        System.out.println(title.getText().toString() + company.getText().toString() + city.getText().toString() + state.getText().toString() + costOfLiving.getText().toString() + yearlySalary.getText().toString() + signingBonus.getText().toString() + yearlyBonus.getText().toString() + retirementBonus.getText().toString() + leaveTime.getText().toString());
+        AppDatabase database = Room.databaseBuilder(this, AppDatabase.class, "offers")
+                .allowMainThreadQueries()
+                .fallbackToDestructiveMigration()
+                .build();
 
+        DAI DAI = database.AppDatabaseObject();
+        job2Id = DAI.getCurrentJobId();
+        if (job1Id <= 0){
+            job1Id = DAI.getMaxId();
+        }
+        Intent i = new Intent(getApplicationContext(), JobOfferCompare.class);
+        i.putExtra("Job1", Integer.toString(job1Id));
+        i.putExtra("Job2", Integer.toString(job2Id));
+        startActivity(i);
     }
 
     private void addJobOffers() {
