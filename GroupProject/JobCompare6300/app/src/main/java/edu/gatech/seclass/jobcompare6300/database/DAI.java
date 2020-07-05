@@ -82,7 +82,7 @@ public interface DAI {
     public String getStateById(int offerId);
 
     @Query("Select costOfLiving from offers where id = :offerId")
-    public String getCOLById(int offerId);
+    public double getCOLById(int offerId);
 
 
 
