@@ -13,11 +13,10 @@ import android.widget.TextView;
 import edu.gatech.seclass.jobcompare6300.database.AppDatabase;
 import edu.gatech.seclass.jobcompare6300.database.DAI;
 import edu.gatech.seclass.jobcompare6300.database.JobOffer;
-// hui test
 import android.content.SharedPreferences;
 import android.content.Context;
 import android.widget.Toast;
-// hui test
+
 
 public class JobOffers extends AppCompatActivity implements View.OnClickListener {
     EditText title, company, city, state, costOfLiving, yearlySalary, signingBonus, yearlyBonus, retirementBonus, leaveTime;
@@ -93,6 +92,7 @@ public class JobOffers extends AppCompatActivity implements View.OnClickListener
 //        int yswValue = mPreferences.getInt("ysw", 1);
 //        yearlySalaryWeight.setText(String.valueOf(yswValue));
 //        // hui test
+
     }
 
     private void compareJobOffers() {
