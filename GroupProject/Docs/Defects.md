@@ -9,6 +9,6 @@
 | .7 | Allow users to update thier current job's info  | Zeke | Zeke | resolved | |
 | .8 | Title is not being saved correctly from job offers | Zeke | Zeke | resolved | |
 | .9 | compare job offers (disabled if no job offers were entered yet | Zeke | | ongoing|To be precise, this functionality will be enabled if there are either (1) at least two job offers, in the case there is no current job, or (2) at least one job offer, in the case there is a current job. |
-| | | | | | |
-| | | | | | |
+|10|Selection not working correctly from Job Offers page|Pankaj|Sreekumar|resolved| |
+|11|Edit button not populating the selected Job offer|Sreekumar|Sreekumar|resolved| |
 | | | | | | |
