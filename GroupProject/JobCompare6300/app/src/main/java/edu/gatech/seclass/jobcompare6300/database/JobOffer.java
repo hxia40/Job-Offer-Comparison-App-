@@ -66,13 +66,13 @@ public class JobOffer {
 
     // state
     @ColumnInfo(name = "current")
-    public boolean current;
+    public int current;
 
-    public boolean getcurrent() {
+    public int getcurrent() {
         return current;
     }
 
-    public void setcurrent(boolean current) {
+    public void setcurrent(int current) {
         this.current = current;
     }
 	

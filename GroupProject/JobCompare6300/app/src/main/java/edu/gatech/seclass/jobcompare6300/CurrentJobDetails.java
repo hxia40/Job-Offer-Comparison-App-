@@ -117,7 +117,7 @@ public class CurrentJobDetails extends AppCompatActivity implements View.OnClick
             offer.setstate(state.getText().toString());
             offer.setyearlyBonus(Double.valueOf(yearlyBonus.getText().toString()));
             offer.setyearlySalary(Double.valueOf(yearlySalary.getText().toString()));
-            offer.setcurrent(true);
+            offer.setcurrent(1);
 
             DAI.addJob(offer);
 

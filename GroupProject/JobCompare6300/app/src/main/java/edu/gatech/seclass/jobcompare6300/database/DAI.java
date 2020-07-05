@@ -36,31 +36,31 @@ public interface DAI {
 
 
 
-    @Query("Select city  from offers where current = 'True'")
+    @Query("Select city  from offers where current = 1")
     public String readCurrentCity();
 
     @Query("Select company  from offers where current = 1")
     public String readCurrentcompany();
 
-    @Query("Select costOfLiving  from offers where current = 'True'")
+    @Query("Select costOfLiving  from offers where current = 1")
     public Double readCurrentcostOfLiving();
 
-    @Query("Select leaveTime  from offers where current = 'True'")
+    @Query("Select leaveTime  from offers where current = 1")
     public Integer readCurrentleaveTime();
 
-    @Query("Select retiremnetBenifits  from offers where current = 'True'")
+    @Query("Select retiremnetBenifits  from offers where current = 1")
     public Float readCurrentretirementBonus();
 
-    @Query("Select signingBonus  from offers where current = 'True'")
+    @Query("Select signingBonus  from offers where current = 1")
     public Double readCurrentsigningBonus();
 
-    @Query("Select state  from offers where current = 'True'")
+    @Query("Select state  from offers where current = 1")
     public String readCurrentstate();
 
-    @Query("Select yearlyBonus  from offers where current = 'True'")
+    @Query("Select yearlyBonus  from offers where current = 1")
     public Double readCurrentyearlyBonus();
 
-    @Query("Select yearlySalary  from offers where current = 'True'")
+    @Query("Select yearlySalary  from offers where current = 1")
     public Double readCurrentyearlySalary();
 
     @Update
