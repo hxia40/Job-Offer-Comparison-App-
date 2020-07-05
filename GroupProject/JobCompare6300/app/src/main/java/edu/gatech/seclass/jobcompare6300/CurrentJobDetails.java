@@ -57,7 +57,7 @@ public class CurrentJobDetails extends AppCompatActivity implements View.OnClick
 
         //public Double readCurrentyearlySalary();
         //System.out.println(offers);
-        
+
         EditText r1 = (EditText)findViewById(R.id.txt_current_job_details_title);
         r1.setText(DAI.readCurrentTitle());
         EditText r2 = (EditText)findViewById(R.id.txt_current_job_details_company);
