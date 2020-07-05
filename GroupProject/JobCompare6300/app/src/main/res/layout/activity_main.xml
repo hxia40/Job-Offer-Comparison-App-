@@ -56,5 +56,12 @@
             android:onClick="ComparisonSettings"
             android:text="Comparison Settings" />
 
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="Nuke"
+            android:text="Nuke" />
+
     </LinearLayout>
 </RelativeLayout>
