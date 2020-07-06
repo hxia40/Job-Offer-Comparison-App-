@@ -61,7 +61,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="Nuke"
-            android:text="Nuke" />
+            android:text="Nuke"
+            android:visibility="invisible" />
 
     </LinearLayout>
 </RelativeLayout>

@@ -31,7 +31,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:onClick="onClick"
-                android:text="Edit" />
+                android:text="Edit"
+                android:visibility="gone" />
 
             <Button
                 android:id="@+id/btn_cancel_display"
