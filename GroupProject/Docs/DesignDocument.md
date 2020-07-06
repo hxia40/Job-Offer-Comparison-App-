@@ -1,3 +1,5 @@
+# Version 1.1
+
 # Design Document
 
 *This is the template for your design document. The parts in italics are concise explanations of what should go in the corresponding sections and should not appear in the final document.*
@@ -43,7 +45,7 @@
 *Describe the hardware and software that the system must operate in and interact with.*
 
 * The system must work on traditional Android phones and be set up as an app that a user can download and then run on their phone
-* We will be using Android Version 8.0 with API level 26
+* We will be using API 28: Android 9.0 (Pie)
 * It will be written in Java using android studio
 
 ## 2 Architectural Design
