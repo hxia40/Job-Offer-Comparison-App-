@@ -112,14 +112,14 @@ public class JobOffersListDisplay extends AppCompatActivity {
 //        String[] company = DAI.readCompany(weights.yearlySalaryWeight,weights.signingBonusWeight,weights.yearlyBonusWeight,weights.retirementBenefitsWeight,weights.leaveTimeWeight,sum);
 //        String[] title = DAI.readTitle(weights.yearlySalaryWeight,weights.signingBonusWeight,weights.yearlyBonusWeight,weights.retirementBenefitsWeight,weights.leaveTimeWeight,sum);
 //        String[] city = DAI.readCity(weights.yearlySalaryWeight,weights.signingBonusWeight,weights.yearlyBonusWeight,weights.retirementBenefitsWeight,weights.leaveTimeWeight,sum);
-        int size = DAI.readsize();
+        int size = DAI.readsizeNonCurrent();
         String[] items = new String[size];
 //        int currentId = DAI.getCurrentJobId();
 
         int[] jobOffers = DAI.readOfferNonCurrent(weights.yearlySalaryWeight,weights.signingBonusWeight,weights.yearlyBonusWeight,weights.retirementBenefitsWeight,weights.leaveTimeWeight,sum);
 
         for (int i=0; i< size; i++) {
-                items[i] = jobOffers[i] + " " + DAI.getTitleById(jobOffers[i]) + " " + DAI.getCompanyById(jobOffers[i]) + " " + DAI.getCityById(jobOffers[i]);
+            items[i] = jobOffers[i] + " " + DAI.getTitleById(jobOffers[i]) + " " + DAI.getCompanyById(jobOffers[i]) + " " + DAI.getCityById(jobOffers[i]);
         }
 
 //        for(int i=0; i < size; i++){
