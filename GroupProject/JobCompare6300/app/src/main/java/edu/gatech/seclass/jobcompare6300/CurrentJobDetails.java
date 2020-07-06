@@ -138,7 +138,6 @@ public class CurrentJobDetails extends AppCompatActivity implements View.OnClick
     }
 
     private void saveCurrentJobDetails() {
-        System.out.println("Reached here");
 
         costOfLiving.setText(Double.toString(getCostOfLiving(city.getText().toString(), state.getText().toString())));
 
