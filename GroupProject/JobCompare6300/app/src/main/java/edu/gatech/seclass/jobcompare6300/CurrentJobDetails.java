@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 
 import edu.gatech.seclass.jobcompare6300.database.AppDatabase;
@@ -223,12 +224,71 @@ public class CurrentJobDetails extends AppCompatActivity implements View.OnClick
 
     public double getCostOfLiving(String city, String state){
         double col = 0;
-        if (city == "Seattle" && state == "WA"){
-            col = 205;
-        }
-        else{
-            col = 220;
-        }
+        String temp = "";
+        HashMap<String, Integer> COL_MAP = new HashMap<>();
+        COL_MAP.put("Anchorage,AL", 186);
+        COL_MAP.put("Phoenix,AZ", 166);
+        COL_MAP.put("Tucson,AZ", 144);
+        COL_MAP.put("Mountain View,CA", 262);
+        COL_MAP.put("San Francisco,CA", 251);
+        COL_MAP.put("Oakland,CA", 222);
+        COL_MAP.put("Los Angeles,CA", 210);
+        COL_MAP.put("San Jose,CA", 198);
+        COL_MAP.put("San Diego,CA", 188);
+        COL_MAP.put("Sacramento,CA", 187);
+        COL_MAP.put("Riverside,CA", 156);
+        COL_MAP.put("Denver,CO", 195);
+        COL_MAP.put("Colorado Springs,CO", 155);
+        COL_MAP.put("Washington,DC", 225);
+        COL_MAP.put("Miami,FL", 201);
+        COL_MAP.put("Orlando,FL", 169);
+        COL_MAP.put("Tampa,FL", 163);
+        COL_MAP.put("Jacksonville,FL", 146);
+        COL_MAP.put("Atlanta,GA", 163);
+        COL_MAP.put("Honolulu,HI", 203);
+        COL_MAP.put("Boise,ID", 142);
+        COL_MAP.put("Chicago,IL", 200);
+        COL_MAP.put("Indianapolis,IN", 151);
+        COL_MAP.put("Louisville,KY", 143);
+        COL_MAP.put("New Orleans,LA", 156);
+        COL_MAP.put("Boston,MA", 214);
+        COL_MAP.put("Baltimore,MD", 164);
+        COL_MAP.put("Detroit,MI", 150);
+        COL_MAP.put("Minneapolis,MN", 171);
+        COL_MAP.put("St. Louis,MO", 152);
+        COL_MAP.put("Kansas City,MO", 144);
+        COL_MAP.put("Charlotte,NC", 168);
+        COL_MAP.put("Raleigh,NC", 154);
+        COL_MAP.put("Omaha,NE", 142);
+        COL_MAP.put("Jersey City,NJ", 235);
+        COL_MAP.put("Albuquerque,NM", 133);
+        COL_MAP.put("Las Vegas,NV", 160);
+        COL_MAP.put("New York,NY", 260);
+        COL_MAP.put("Cleveland,OH", 155);
+        COL_MAP.put("Cincinnati,OH", 140);
+        COL_MAP.put("Portland,OR", 189);
+        COL_MAP.put("Philadelphia,PA", 179);
+        COL_MAP.put("Pittsburg,PA", 171);
+        COL_MAP.put("Providence,RI", 161);
+        COL_MAP.put("Charleston,SC", 163);
+        COL_MAP.put("Nashville,TN", 158);
+        COL_MAP.put("Memphis,TN", 130);
+        COL_MAP.put("Austin,TX", 171);
+        COL_MAP.put("Fort Worth,TX", 167);
+        COL_MAP.put("Dallas,TX", 162);
+        COL_MAP.put("Houston,TX", 152);
+        COL_MAP.put("San Antonio,TX", 144);
+        COL_MAP.put("Salt Lake City,UT", 168);
+        COL_MAP.put("Burlington,VT", 166);
+        COL_MAP.put("Seattle,WA", 205);
+        COL_MAP.put("Spokane,WA", 151);
+        COL_MAP.put("Milwaukee,WI", 149);
+
+        temp = city + "," + state;
+
+        if (COL_MAP.get(temp) == null) {col = 220;}
+        else {col = COL_MAP.get(temp);}
+        System.out.println("colllll:"+ col);
         return col;
     }
 

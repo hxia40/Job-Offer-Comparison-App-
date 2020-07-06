@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import java.util.HashMap;
+
 import edu.gatech.seclass.jobcompare6300.database.AppDatabase;
 import edu.gatech.seclass.jobcompare6300.database.DAI;
 import edu.gatech.seclass.jobcompare6300.database.JobOffer;
