@@ -28,11 +28,14 @@ public interface DAI {
     @Query("Select title from (Select title, (:ysw * yearlySalary/:base) + (:sbw * signingBonus/:base) + (:ybw * yearlyBonus/:base) + (yearlySalary * retiremnetBenifits * :rbw/:base) + (leaveTime * yearlySalary/260) * (:ltw/:base) as rank from offers order by rank desc)")
     public String[] readTitle(int ysw, int sbw, int ybw, int rbw, int ltw, int base);
 
-    @Query("Select city from (Select city, (:ysw * yearlySalary/:base) + (:sbw * signingBonus/:base) + (:ybw * yearlyBonus/:base) + (yearlySalary * retiremnetBenifits * :rbw/:base) + (leaveTime * yearlySalary/260) * (:ltw/:base) as rank from offers order by rank desc)")
+    @Query("Select city from (Select city, (:ysw * yearlySalary/:base) + (:sbw * signingBonus/:base) + (:ybw * yearlyBonus/:base) + (yearlySalary * retiremnetBenifits * :rbw/:base) + (leaveTime * yearlySalary/260) * (:ltw/:base) as rank from offers where current !=1 order by rank desc)")
     public String[] readCity(int ysw, int sbw, int ybw, int rbw, int ltw, int base);
 
     @Query("Select count(*) from offers")
     public int readsize();
+
+    @Query("Select count(*) from offers where current !=1")
+    public int readsizeNonCurrent();
 
     @Query("Select title  from offers where current = 1")
     public String readCurrentTitle();
