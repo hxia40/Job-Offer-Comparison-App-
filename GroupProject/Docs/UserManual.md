@@ -33,12 +33,10 @@ This App helps the user to compare job offers in terms of salary, benefits, loca
 (2) Hit the "COMPARE JOB OFFERS" button.  
 (3) Choose two jobs by marking their respective checkboxes, and hit the "COMPARE" button to enter the comparison interface. If the number of the job chosen is not two, corresponding error mark will appear, or hit the "CANCEL" button to navigate to the app's Main Menu. 
 (4) In the comparison interface, hit the "BACK" button to navigate to the job list, or hit the "HOME" button to return to the Main Menu.
-
-*Route 2: (compare a job offer with current job)*
+*Route 2: (compare a job offer with current job)*  
 (1) Start the app or navigate to the app's Main Menu.  
 (2) Hit the "JOB OFFERS" button.  
 (3) Hit the "ADD" button. 
 (4) Fill all the required text fields. If the user input(s) are invalid, corresponding error mark(s) will appear on the right-hand side of the text field.  
 (5) Hit the "SAVE" button, then hit the "COMPARE" button to compare the inputs with the user's current job.  
 (6) hit the "BACK" button to navigate to the Job Offers interface, or hit the "HOME" button to return to the Main Menu.
- 
