@@ -288,7 +288,7 @@ public class CurrentJobDetails extends AppCompatActivity implements View.OnClick
 
         if (COL_MAP.get(temp) == null) {col = 220;}
         else {col = COL_MAP.get(temp);}
-        System.out.println("colllll:"+ col);
+//        System.out.println("colllll:"+ col);
         return col;
     }
 

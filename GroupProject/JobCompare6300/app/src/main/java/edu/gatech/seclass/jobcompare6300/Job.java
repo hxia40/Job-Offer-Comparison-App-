@@ -109,7 +109,7 @@ public class Job {
 
         if (COL_MAP.get(temp) == null) {col = 220;}
         else {col = COL_MAP.get(temp);}
-        System.out.println("colllll in job:"+ col);
+//        System.out.println("colllll in job:"+ col);
         return (int) Math.round(col);
     }
 
