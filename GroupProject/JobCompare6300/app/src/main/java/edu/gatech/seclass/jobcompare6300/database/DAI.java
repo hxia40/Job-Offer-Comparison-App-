@@ -28,11 +28,14 @@ public interface DAI {
     @Query("Select title from (Select title, (:ysw * yearlySalary/:base) + (:sbw * signingBonus/:base) + (:ybw * yearlyBonus/:base) + (yearlySalary * retiremnetBenifits * :rbw/:base) + (leaveTime * yearlySalary/260) * (:ltw/:base) as rank from offers order by rank desc)")
     public String[] readTitle(int ysw, int sbw, int ybw, int rbw, int ltw, int base);
 
-    @Query("Select city from (Select city, (:ysw * yearlySalary/:base) + (:sbw * signingBonus/:base) + (:ybw * yearlyBonus/:base) + (yearlySalary * retiremnetBenifits * :rbw/:base) + (leaveTime * yearlySalary/260) * (:ltw/:base) as rank from offers order by rank desc)")
+    @Query("Select city from (Select city, (:ysw * yearlySalary/:base) + (:sbw * signingBonus/:base) + (:ybw * yearlyBonus/:base) + (yearlySalary * retiremnetBenifits * :rbw/:base) + (leaveTime * yearlySalary/260) * (:ltw/:base) as rank from offers where current !=1 order by rank desc)")
     public String[] readCity(int ysw, int sbw, int ybw, int rbw, int ltw, int base);
 
     @Query("Select count(*) from offers")
     public int readsize();
+
+    @Query("Select count(*) from offers where current !=1")
+    public int readsizeNonCurrent();
 
     @Query("Select title  from offers where current = 1")
     public String readCurrentTitle();
@@ -72,14 +75,14 @@ public interface DAI {
 
     @Query("Delete from offers")
     public void Nuke();
-    
+
     @Query("Select max(id) from offers")
     public int getMaxId();
 
     @Query("Select id from offers where current = 1")
     public int getCurrentJobId();
 
-    @Query("Select id from (Select id, (:ysw * yearlySalary/:base) + (:sbw * signingBonus/:base) + (:ybw * yearlyBonus/:base) + (yearlySalary * retiremnetBenifits * :rbw/:base) + (leaveTime * yearlySalary/260) * (:ltw/:base) as rank from offers order by rank desc)")
+    @Query("Select id from (Select id, (:ysw * yearlySalary * ((select  avg(costOfLiving) from offers)/costOfLiving)/:base) + (:sbw * signingBonus/:base) + (:ybw * yearlyBonus/:base) + (yearlySalary * retiremnetBenifits * :rbw/:base) + (leaveTime * yearlySalary/260) * (:ltw/:base) as rank from offers order by rank desc)")
     public int[] readOffer(int ysw, int sbw, int ybw, int rbw, int ltw, int base);
 
     @Query("Select id from (Select id, (:ysw * yearlySalary/:base) + (:sbw * signingBonus/:base) + (:ybw * yearlyBonus/:base) + (yearlySalary * retiremnetBenifits * :rbw/:base) + (leaveTime * yearlySalary/260) * (:ltw/:base) as rank from offers order by rank desc)")
