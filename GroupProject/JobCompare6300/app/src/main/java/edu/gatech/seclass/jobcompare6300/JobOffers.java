@@ -21,12 +21,13 @@ import android.widget.Toast;
 public class JobOffers extends AppCompatActivity implements View.OnClickListener {
     EditText title, company, city, state, costOfLiving, yearlySalary, signingBonus, yearlyBonus, retirementBonus, leaveTime;
     Button save, compare, cancel;
-    public int job1Id, job2Id;
+    public int job1Id, job2Id, saved;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_job_offers);
         init();
+        saved = 0;
     }
 
     @Override
@@ -97,20 +98,29 @@ public class JobOffers extends AppCompatActivity implements View.OnClickListener
 
     private void compareJobOffers() {
 //        System.out.println(title.getText().toString() + company.getText().toString() + city.getText().toString() + state.getText().toString() + costOfLiving.getText().toString() + yearlySalary.getText().toString() + signingBonus.getText().toString() + yearlyBonus.getText().toString() + retirementBonus.getText().toString() + leaveTime.getText().toString());
-        AppDatabase database = Room.databaseBuilder(this, AppDatabase.class, "offers")
-                .allowMainThreadQueries()
-                .fallbackToDestructiveMigration()
-                .build();
+        if(saved == 1) {
+            AppDatabase database = Room.databaseBuilder(this, AppDatabase.class, "offers")
+                    .allowMainThreadQueries()
+                    .fallbackToDestructiveMigration()
+                    .build();
 
-        DAI DAI = database.AppDatabaseObject();
-        job2Id = DAI.getCurrentJobId();
-        if (job1Id <= 0){
-            job1Id = DAI.getMaxId();
+            DAI DAI = database.AppDatabaseObject();
+            job2Id = DAI.getCurrentJobId();
+            if (job1Id <= 0) {
+                job1Id = DAI.getMaxId();
+            }
+            Intent i = new Intent(getApplicationContext(), JobOfferCompare.class);
+            i.putExtra("Job1", Integer.toString(job1Id));
+            i.putExtra("Job2", Integer.toString(job2Id));
+            startActivity(i);
         }
-        Intent i = new Intent(getApplicationContext(), JobOfferCompare.class);
-        i.putExtra("Job1", Integer.toString(job1Id));
-        i.putExtra("Job2", Integer.toString(job2Id));
-        startActivity(i);
+        else
+        {
+            int duration = Toast.LENGTH_SHORT;
+            Context context = getApplicationContext();
+            Toast toast = Toast.makeText(context, "Please save before comparing", duration);
+            toast.show();
+        }
     }
 
     private void addJobOffers() {
@@ -170,10 +180,11 @@ public class JobOffers extends AppCompatActivity implements View.OnClickListener
             int duration = Toast.LENGTH_SHORT;
             Toast toast = Toast.makeText(context, text, duration);
             toast.show();
+            saved = 1;
             //System.out.println(DAI.readCompany());
 //            finish();
-            Intent i = new Intent(getApplicationContext(),JobOffersListDisplay.class);
-            startActivity(i);
+            //Intent i = new Intent(getApplicationContext(),JobOffersListDisplay.class);
+            //startActivity(i);
         }
     }
     
