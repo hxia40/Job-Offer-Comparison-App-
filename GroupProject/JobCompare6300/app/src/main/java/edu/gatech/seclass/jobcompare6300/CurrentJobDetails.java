@@ -139,6 +139,9 @@ public class CurrentJobDetails extends AppCompatActivity implements View.OnClick
 
     private void saveCurrentJobDetails() {
         System.out.println("Reached here");
+
+        costOfLiving.setText(Double.toString(getCostOfLiving(city.getText().toString(), state.getText().toString())));
+
         if(!validateMandatoryFields()) {
             AppDatabase database = Room.databaseBuilder(this, AppDatabase.class, "offers")
                     .allowMainThreadQueries()
@@ -286,7 +289,7 @@ public class CurrentJobDetails extends AppCompatActivity implements View.OnClick
 
         temp = city + "," + state;
 
-        if (COL_MAP.get(temp) == null) {col = 220;}
+        if (COL_MAP.get(temp) == null) {col = 200;}
         else {col = COL_MAP.get(temp);}
 //        System.out.println("colllll:"+ col);
         return col;

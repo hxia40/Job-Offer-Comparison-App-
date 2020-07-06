@@ -171,6 +171,7 @@
                     android:layout_weight="4.5"
                     android:digits="1234567890."
                     android:ems="10"
+                    android:enabled="false"
                     android:inputType="textPersonName" />
             </LinearLayout>
 
