@@ -116,7 +116,7 @@ public class JobOffersListDisplay extends AppCompatActivity {
         String[] items = new String[size];
 //        int currentId = DAI.getCurrentJobId();
 
-        int[] jobOffers = DAI.readOffer(weights.yearlySalaryWeight,weights.signingBonusWeight,weights.yearlyBonusWeight,weights.retirementBenefitsWeight,weights.leaveTimeWeight,sum);
+        int[] jobOffers = DAI.readOfferNonCurrent(weights.yearlySalaryWeight,weights.signingBonusWeight,weights.yearlyBonusWeight,weights.retirementBenefitsWeight,weights.leaveTimeWeight,sum);
 
         for (int i=0; i< size; i++) {
                 items[i] = jobOffers[i] + " " + DAI.getTitleById(jobOffers[i]) + " " + DAI.getCompanyById(jobOffers[i]) + " " + DAI.getCityById(jobOffers[i]);
