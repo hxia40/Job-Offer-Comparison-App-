@@ -85,7 +85,7 @@ public interface DAI {
     @Query("Select id from (Select id, (:ysw * yearlySalary * ((select  avg(costOfLiving) from offers)/costOfLiving)/:base) + (:sbw * signingBonus/:base) + (:ybw * yearlyBonus/:base) + (yearlySalary * retiremnetBenifits * :rbw/:base) + (leaveTime * yearlySalary/260) * (:ltw/:base) as rank from offers order by rank desc)")
     public int[] readOffer(int ysw, int sbw, int ybw, int rbw, int ltw, int base);
 
-    @Query("Select id from (Select id, (:ysw * yearlySalary/:base) + (:sbw * signingBonus/:base) + (:ybw * yearlyBonus/:base) + (yearlySalary * retiremnetBenifits * :rbw/:base) + (leaveTime * yearlySalary/260) * (:ltw/:base) as rank from offers order by rank desc)")
+    @Query("Select id from (Select id, (:ysw * yearlySalary/:base) + (:sbw * signingBonus/:base) + (:ybw * yearlyBonus/:base) + (yearlySalary * retiremnetBenifits * :rbw/:base) + (leaveTime * yearlySalary/260) * (:ltw/:base) as rank from offers where current != 1 order by rank desc)")
     public int[] readOfferNonCurrent(int ysw, int sbw, int ybw, int rbw, int ltw, int base);
 
     @Query("select id from offers where current = 0")
