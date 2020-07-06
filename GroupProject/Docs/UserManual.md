@@ -41,3 +41,4 @@ This App helps the user to compare job offers in terms of salary, benefits, loca
 (4) Fill all the required text fields. If the user input(s) are invalid, corresponding error mark(s) will appear on the right-hand side of the text field.  
 (5) Hit the "SAVE" button, then hit the "COMPARE" button to compare the inputs with the user's current job.  
 (6) hit the "BACK" button to navigate to the Job Offers interface, or hit the "HOME" button to return to the Main Menu.
+ 
