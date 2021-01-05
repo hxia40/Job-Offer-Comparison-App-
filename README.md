@@ -1,5 +1,6 @@
 # Job-Offer-Comparison-App
-### Java, Android Studio, SQLite, Mobile App, GUI, White/black-box Testing, Agile Process        May 2020– Aug. 2020 
+### Java, Android Studio, SQLite, Mobile App, GUI, White/black-box Testing, Agile Process
+### May 2020– Aug. 2020 
 
 Hui Xia: in this project, I have:
 -	Collaboratively developed an Android app to record and compare job offers, using Android Studio and SQLite, under Agile Process.
